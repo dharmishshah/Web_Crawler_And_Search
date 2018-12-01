@@ -1,3 +1,4 @@
+from src import readData
 import os
 import math
 from collections import OrderedDict
@@ -21,36 +22,13 @@ inverted_index_dict = {}
 # dictionary which maintains documents as keys and term counts as values (including duplicates)
 term_count_dict = {}
 
-def main(queryId, query,dir):
-    jm_query_likelihood(queryId, query,dir)
-
-# reading term count from a file
-def readTermCount():
-    f = open(termCountFile, 'r+', encoding='utf-8')
-    input = f.read();
-    terms = input.split("\n");
-    for term in terms:
-        if term:
-            term = term.replace("[","").replace("]","")
-            term_count_dict[term.split(",")[0].replace("'","").rstrip()] = int(term.split(",")[-1])
-
-
-# reading word and their respective documents from a file
-def readInvertedIndex():
-    f = open(invertedIndexFile, 'r+', encoding='utf-8')
-    input = f.read();
-    terms = input.split("\n");
-    for term in terms:
-        if term:
-            docs = eval(term.split(":")[2])
-            inverted_index_dict[term.split(":")[0].rstrip()] = docs
 
 # calculating lm dirichlet smoothing
 def jm_query_likelihood(queryId, query, dir):
-    readTermCount()
-    readInvertedIndex()
-    query = remove_punctuation(query)
-    query = handleCaseFolding(query)
+    term_count_dict = readData.readTermCount()
+    inverted_index_dict = readData.readInvertedIndex()
+    query = readData.remove_punctuation(query)
+    query = readData.handleCaseFolding(query)
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
 
@@ -99,18 +77,15 @@ def jm_query_likelihood(queryId, query, dir):
             partial_score = ( (1 - lambdaValue) * (fqi_D / term_count) + lambdaValue * (q_dict.get(q) / word_count))
 
             # adding score in existing score for document
-            if partial_score == 0:
-                score = score
-            else:
+            if partial_score != 0:
                 score = score + math.log10(partial_score)
-
         score_dict[every_doc] = score
-        # sorting document based on score in descending order
-        score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
+    # sorting document based on score in descending order
+    score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 
     query = query.replace(" ","_")
     # writing output in a file
-    f = open(dir + "/" + query + "_jm_query_likelihood.txt" , 'w+', encoding='utf-8')
+    f = open(dir + "/" + str(queryId) + "_jm_query_likelihood.txt" , 'w+', encoding='utf-8')
     count = 1
     for s in score_dict:
         f.write(str(queryId) + " Q0 " + str(s) + " " + str(count) + " " + str(score_dict[s]) + " JM_Query_Likelihood "
@@ -118,33 +93,3 @@ def jm_query_likelihood(queryId, query, dir):
         if(count == 100):
             break;
         count+=1
-
-# handles punctuation on query text
-def remove_punctuation(queryText):
-    punctuation_list_text = [',', '.', '!', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '[', ']', ';', '\'', '/',
-                             '\\', '{', '}', ':', '"', '<', '>', '?', '=', '`', '~']
-    punctuation_list_digits = ['!', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '[', ']', ';', '\'', '/', '\\',
-                               '{', '}', ':', '"', '<', '>', '?', '=']
-    processedTextAfter = ""
-    terms_list = queryText.split()
-    for terms in terms_list:
-        # Case on whether digit is included
-        if re.search(r'\d', terms):
-            # Removing all the punctuations from the digit punctuation list
-            for punctuations in punctuation_list_digits:
-                terms = terms.replace(punctuations, '')
-        else:
-            # Removing all the punctuations from the text punctuation list
-            for punctuations in punctuation_list_text:
-                terms = terms.replace(punctuations, '')
-        # text after punctuation handling
-        processedTextAfter = processedTextAfter + ' ' + terms
-
-    processedTextAfter = processedTextAfter.rstrip()
-    processedTextAfter = processedTextAfter.lstrip()
-    return processedTextAfter
-
-# handles case folding on query text
-def handleCaseFolding(query_text):
-    query_text = str(query_text).lower()
-    return query_text
