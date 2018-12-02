@@ -1,4 +1,4 @@
-import readData
+from src import readData
 import os
 import math
 from collections import OrderedDict
@@ -88,13 +88,14 @@ def bm25(queryId, query, dir):
             doc_len = 0
             if docs:
                 doc_len = len(docs)
-            partial_score = - math.log10(doc_len + 0.5 / ((len(term_count_dict) - doc_len) + 0.5))
+            partial_score = - math.log10((doc_len + 0.5) / ((len(term_count_dict) - doc_len) + 0.5))
             term_frequency_score = (k1 + 1) * fqi_D / (K + fqi_D)
             query_frequency_score = (k2+1) * query_counts/(k2+query_counts)
             score = score + partial_score * term_frequency_score * query_frequency_score
             index+=1
 
         score_dict[every_doc] = score
+        print("bm25 calculated for - " + every_doc)
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 
@@ -103,7 +104,7 @@ def bm25(queryId, query, dir):
     f = open(dir + "/" + str(queryId) + "_bm_25.txt" , 'w+', encoding='utf-8')
     count = 1
     for s in score_dict:
-        f.write(str(queryId) + " Q0 " + str(s) + " " + str(count) + " " + str(score_dict[s]) + " JM_Query_Likelihood "
+        f.write(str(queryId) + " Q0 " + str(s) + " " + str(count) + " " + str(score_dict[s]) + " BM_25 "
                 + "\n")
         if(count == 100):
             break;

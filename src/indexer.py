@@ -2,7 +2,6 @@ import os
 import nltk
 from collections import OrderedDict
 from more_itertools import locate
-from prettytable import PrettyTable
 
 
 def create_index(src_directory_path, dgaps):
@@ -112,7 +111,7 @@ def sort_index(inverted_index):
     convert_into_table(term_frequency_sorted_index,document_frequency_sorted_index_by_count,document_frequency_sorted_index_by_term)
 
 def convert_into_table(term_frequency_sorted_index,document_frequency_sorted_index_by_count,document_frequency_sorted_index_by_term):
-    tf_table = PrettyTable(['term', 'term_frequency'])
+    #tf_table = PrettyTable(['term', 'term_frequency'])
 
     tf_file = open('tf_table.txt', 'w', encoding='utf-8')
     tf_file.write(str("------------- Terms : \tFrequency Count\n\n"))

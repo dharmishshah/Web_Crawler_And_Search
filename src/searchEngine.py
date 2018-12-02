@@ -24,12 +24,12 @@ def main():
     #indexer.create_index(dst_directory_path, False)
 
     #ranking using JM Query likelihood
-    JM_Query_Likelihood.jm_query_likelihood(1,"What articles exist which deal with TSS (Time Sharing System), an"
-    + "operating system for IBM computers?",current_directory)
-
-    #ranking using tf idf
-    TF_IDF.tf_idf(1,"What articles exist which deal with TSS (Time Sharing System), an"
-    + "operating system for IBM computers?",current_directory)
+    # JM_Query_Likelihood.jm_query_likelihood(1,"What articles exist which deal with TSS (Time Sharing System), an"
+    # + "operating system for IBM computers?",current_directory)
+    #
+    # #ranking using tf idf
+    # TF_IDF.tf_idf(1,"What articles exist which deal with TSS (Time Sharing System), an"
+    # + "operating system for IBM computers?",current_directory)
 
     # ranking using bm 25
     BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
