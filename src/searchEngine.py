@@ -1,4 +1,4 @@
-from src import generateCorpus, indexer, JM_Query_Likelihood, TF_IDF, BM25
+from src import generateCorpus, indexer, JM_Query_Likelihood, TF_IDF, BM25, stopper
 import os
 from bs4 import BeautifulSoup
 
@@ -13,6 +13,8 @@ src_directory_path = current_directory + "/outputFiles/corpus/"
 dst_directory_path = current_directory + "/outputFiles/cleanCorpus/"
 
 def main():
+
+    stopper.generate_file_without_stopwords()
 
     # generating corpus from raw documents, applying punctuation removal and case folding
     #generateCorpus.generateCorpus(src_directory_path,dst_directory_path,True,True)
@@ -32,7 +34,7 @@ def main():
     # + "operating system for IBM computers?",current_directory)
 
     # ranking using bm 25
-    BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
-                  + "operating system for IBM computers?", current_directory)
+    # BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
+    #               + "operating system for IBM computers?", current_directory)
 
 main()
