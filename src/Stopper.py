@@ -27,26 +27,29 @@ def generate_corpus_without_stop_words():
 
     # parsing each file from the directory
     for file in file_names:
-        with open(src_directory+file, 'r+', encoding='utf-8') as f:
+        with open(src_directory + "/" + file, 'r+', encoding='utf-8') as f:
             processed_text = f.read()
+            new_processed_text = ""
 
-            for stopword in stop_list:
-                if stopword in processed_text:
-                    processed_text = processed_text.replace(stopword,"")
+            processTextArray = processed_text.split(" ")
 
-            file_name = str(file).split(".")[0]
-            with open(dst_directory + file_name + ".txt", 'w', encoding='utf-8') as f:
-                f.write(processed_text)
+            for currentWord in processTextArray:
+                if currentWord in stop_list:
+                    continue;
+                else:
+                    new_processed_text = new_processed_text + " " + currentWord
+
+            fileName = str(file).split(".")[0]
+            with open(dst_directory + "/" + fileName + ".txt", 'w', encoding='utf-8') as f:
+                f.write(new_processed_text)
             print("Files Processed - " + str(count) + " FileName - " + file)
             count += 1
 
 
 def get_stop_words():
-    stop_list = []
     with open(common_words_file, 'r+', encoding='utf-8') as f:
         common_words_text = f.read()
         stop_list = common_words_text.split("\n")
-        
     return stop_list
 
 #generate_corpus_without_stop_words()
