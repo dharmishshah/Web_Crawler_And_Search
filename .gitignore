@@ -5,9 +5,11 @@
 # Eclipse
 .settings
 .metadata
-
-
-__*
+
 
 *.txt
 *.html
+
+
+
+__*
