@@ -8,10 +8,10 @@ import re
 current_directory = os.getcwd()
 
 # source file of inverted unigram index
-invertedIndexFile = current_directory + "/inverted_index.txt"
+inverted_index_data = current_directory + "/inverted_index.txt"
 
 # source file of unigram term count of documents
-termCountFile = current_directory + "/term_count.txt"
+term_count_data = current_directory + "/term_count.txt"
 
 # value of lambda
 lambdaValue = 0.35
@@ -25,10 +25,10 @@ term_count_dict = {}
 
 # calculating lm dirichlet smoothing
 def jm_query_likelihood(queryId, query, dir):
-    term_count_dict = readData.readTermCount()
-    inverted_index_dict = readData.readInvertedIndex()
+    term_count_dict = readData.read_term_count()
+    inverted_index_dict = readData.read_inverted_index()
     query = readData.remove_punctuation(query)
-    query = readData.handleCaseFolding(query)
+    query = readData.handle_case_folding(query)
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
 
