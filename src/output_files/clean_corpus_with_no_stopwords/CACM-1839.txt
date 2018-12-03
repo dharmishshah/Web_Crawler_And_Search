@@ -1,1 +1,1 @@
-         358 1, 4,5   1969               5.14 691007   15, 1978 322  1839 5 1839 1839 5 1839 1839 5 1839
+ singular decomposition complex matrix algorithm 358 f1, 4,5 cacm october 1969 businger goulub singular values matrix decomposition squares solution pseudoinverse 5.14 ca691007 jb february 15, 1978 322 pm 1839 5 1839 1839 5 1839 1839 5 1839

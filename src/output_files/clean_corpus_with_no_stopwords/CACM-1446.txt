@@ -1,1 +1,1 @@
-    279 1   1966       660403   3, 1978 1050  1446 5 1446 1446 5 1446 1446 5 1446
+ chebyshev quadrature algorithm 279 d1 cacm april 1966 hopgood litherland ca660403a jb march 3, 1978 1050 1446 5 1446 1446 5 1446 1446 5 1446

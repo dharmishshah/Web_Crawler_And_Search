@@ -1,1 +1,1 @@
-       270 2   1965   651105   6, 1978 503  1176 5 1176 1176 5 1176 1176 5 1176
+ finding eigenvectors gaussian elimination algorithm 270 f2 cacm november 1965 newhouse ca651105 jb march 6, 1978 503 pm 1176 5 1176 1176 5 1176 1176 5 1176

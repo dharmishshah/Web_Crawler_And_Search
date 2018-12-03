@@ -1,1 +1,1 @@
-         297 2   1967   670311   28, 1978 1259  1617 5 1617 1617 5 1617 1617 5 1617
+ eigenvalues eigenvectors symmetric system algorithm 297 f2 cacm march 1967 boothroyd ca670311a jb february 28, 1978 1259 pm 1617 5 1617 1617 5 1617 1617 5 1617

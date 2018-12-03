@@ -1,1 +1,1 @@
-            253 2   1965    650405   7, 1978 356  1286 5 1286 1286 5 1286 1286 5 1286
+ eigenvalues real symmetric matrix qr method algorithm 253 f2 cacm april 1965 businger ca650405 jb march 7, 1978 356 pm 1286 5 1286 1286 5 1286 1286 5 1286

@@ -1,1 +1,1 @@
-                1977        4.20 771107   27, 1977 720  2909 5 2909 2909 5 2909 2909 5 2909
+ unnecessary diversity notation syntactic definitions cacm november 1977 wirth syntactic description language extended bnf 4.20 ca771107 jb december 27, 1977 720 2909 5 2909 2909 5 2909 2909 5 2909

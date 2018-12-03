@@ -1,1 +1,1 @@
-           50   1963   630111   14, 1978 236  937 5 937 937 5 937 937 5 937
+ inverse finite segment hilbert matrix algorithm 50 cacm january 1963 naur ca630111 jb march 14, 1978 236 pm 937 5 937 937 5 937 937 5 937

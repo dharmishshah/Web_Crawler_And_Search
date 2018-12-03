@@ -1,1 +1,1 @@
-     73   1961    611206   15, 1978 1024  244 5 244 244 5 244 244 5 244
+ incomplete elliptic integrals algorithm 73 cacm december 1961 kriebel ca611206 jb march 15, 1978 1024 pm 244 5 244 244 5 244 244 5 244

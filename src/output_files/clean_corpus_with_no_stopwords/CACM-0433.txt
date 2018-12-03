@@ -1,1 +1,1 @@
- --   --    1962    621206   17, 1978 510  433 5 433 433 5 433 433 5 433
+ fixed-world-length arrays variable-word-length computers cacm december 1962 sonquist ca621206 jb march 17, 1978 510 pm 433 5 433 433 5 433 433 5 433

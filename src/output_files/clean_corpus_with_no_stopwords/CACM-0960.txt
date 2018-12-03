@@ -1,1 +1,1 @@
-        1964    641211   9, 1978 325  960 5 960 960 5 960 960 5 960
+ curve fitting format fortran cacm december 1964 garber ca641211 jb march 9, 1978 325 pm 960 5 960 960 5 960 960 5 960

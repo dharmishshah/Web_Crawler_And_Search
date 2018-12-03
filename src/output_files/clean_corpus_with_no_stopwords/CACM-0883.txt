@@ -1,1 +1,1 @@
-     165   1963     630408   14, 1978 1223  883 5 883 883 5 883 883 5 883
+ complete elliptic integrals algorithm 165 cacm april 1963 thacher jr ca630408 jb march 14, 1978 1223 pm 883 5 883 883 5 883 883 5 883

@@ -1,1 +1,1 @@
-        89   1962    620515   20, 1978 136  590 5 590 590 5 590 590 5 590
+ evaluation fresnel sine integral algorithm 89 cacm 1962 cundiff ca620515 jb march 20, 1978 136 pm 590 5 590 590 5 590 590 5 590

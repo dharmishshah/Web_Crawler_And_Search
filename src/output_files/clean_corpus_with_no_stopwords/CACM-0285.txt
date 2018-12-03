@@ -1,1 +1,1 @@
-       1961       610909   16, 1978 939  285 5 285 285 5 285 285 5 285
+ solution tridiagonal matrices cacm september 1961 wenrick houghton ca610909 jb march 16, 1978 939 pm 285 5 285 285 5 285 285 5 285

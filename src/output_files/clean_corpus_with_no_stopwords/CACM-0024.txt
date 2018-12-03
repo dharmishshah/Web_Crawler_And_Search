@@ -1,1 +1,1 @@
-        1958    580504   22, 1978 913  24 5 24 24 5 24 24 5 24
+ improved decimal redundancy check cacm 1958 sisson ca580504 jb march 22, 1978 913 pm 24 5 24 24 5 24 24 5 24

@@ -1,1 +1,1 @@
- -   6  420   1972   -    4.9 720207   31, 1978 412  2384 5 2384 2384 5 2384 2384 5 2384
+ hidden-line plotting program j6 algorithm a420 cacm february 1972 williamson hidden-line plot surface plot 4.9 ca720207 jb january 31, 1978 412 pm 2384 5 2384 2384 5 2384 2384 5 2384

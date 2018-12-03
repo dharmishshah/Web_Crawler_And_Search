@@ -1,1 +1,1 @@
-      -   3   1960    600206   22, 1978 220  226 5 226 226 5 226 226 5 226
+ solution polynomial equation bairstow-hitchcock method algorithm 3 cacm february 1960 grau ca600206 jb march 22, 1978 220 pm 226 5 226 226 5 226 226 5 226
