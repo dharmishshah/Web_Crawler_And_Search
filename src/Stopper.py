@@ -27,7 +27,7 @@ def generate_corpus_without_stop_words():
 
     # parsing each file from the directory
     for file in file_names:
-        with open(src_directory + "/" + file, 'r+', encoding='utf-8') as f:
+        with open(src_directory + file, 'r+', encoding='utf-8') as f:
             processed_text = f.read()
             new_processed_text = ""
 
@@ -40,7 +40,7 @@ def generate_corpus_without_stop_words():
                     new_processed_text = new_processed_text + " " + currentWord
 
             fileName = str(file).split(".")[0]
-            with open(dst_directory + "/" + fileName + ".txt", 'w', encoding='utf-8') as f:
+            with open(dst_directory + fileName + ".txt", 'w', encoding='utf-8') as f:
                 f.write(new_processed_text)
             print("Files Processed - " + str(count) + " FileName - " + file)
             count += 1

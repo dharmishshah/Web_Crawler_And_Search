@@ -2,6 +2,7 @@ from src import JM_Query_Likelihood, TF_IDF, BM25
 from src import Indexer
 from src import Stopper
 from src import Stemmer
+from src import Snippet_generation
 from src import Generate_corpus
 import os
 from bs4 import BeautifulSoup
@@ -41,12 +42,19 @@ def main():
     #               + "operating system for IBM computers?")
 
     # generating corpus with no stopwords
-    Stopper.generate_corpus_without_stop_words()
+    #Stopper.generate_corpus_without_stop_words()
 
     # generating corpus with stemming
-    Stemmer.generate_corpus_from_stem_file()
+    #Stemmer.generate_corpus_from_stem_file()
 
+    # snippet generation for retrieval models
+    Snippet_generation.generate_snippet(1,"What articles exist which deal with TSS (Time Sharing System), an"
+     + "operating system for IBM computers?","bm_25",5)
 
+    Snippet_generation.generate_snippet(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                                        + "operating system for IBM computers?", "jm_query_likelihood", 5)
 
+    Snippet_generation.generate_snippet(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                                        + "operating system for IBM computers?", "tf_idf", 5)
 
 main()
