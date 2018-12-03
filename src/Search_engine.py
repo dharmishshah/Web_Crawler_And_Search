@@ -19,24 +19,24 @@ def main():
 
     Stopper.generate_corpus_without_stop_words()
 
-    # generating corpus from raw documents, applying punctuation removal and case folding
-    #Generate_corpus.Generate_corpus(src_directory_path,dst_directory_path,True,True)
-
-    # indexing for unigram with dgaps
-    #Indexer.create_index(dst_directory_path, True)
-
-    # indexing for unigram without dgaps
-    #Indexer.create_index(dst_directory_path, False)
-
-    #ranking using JM Query likelihood
+    #generating corpus from raw documents, applying punctuation removal and case folding
+    # Generate_corpus.generate_corpus(src_directory_path,dst_directory_path,True,True)
+    #
+    # #indexing for unigram with dgaps
+    # Indexer.create_index(dst_directory_path, True, 100)
+    #
+    # #indexing for unigram without dgaps
+    # Indexer.create_index(dst_directory_path, False, 100)
+    #
+    # #ranking using JM Query likelihood
     # JM_Query_Likelihood.jm_query_likelihood(1,"What articles exist which deal with TSS (Time Sharing System), an"
     # + "operating system for IBM computers?",current_directory)
     #
     # #ranking using tf idf
     # TF_IDF.tf_idf(1,"What articles exist which deal with TSS (Time Sharing System), an"
     # + "operating system for IBM computers?",current_directory)
-
-    # ranking using bm 25
+    #
+    # #ranking using bm 25
     # BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
     #               + "operating system for IBM computers?")
 

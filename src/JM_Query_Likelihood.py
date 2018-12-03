@@ -1,4 +1,4 @@
-from src import readData
+from src import Read_data
 import os
 import math
 from collections import OrderedDict
@@ -25,10 +25,10 @@ term_count_dict = {}
 
 # calculating lm dirichlet smoothing
 def jm_query_likelihood(queryId, query, dir):
-    term_count_dict = readData.read_term_count()
-    inverted_index_dict = readData.read_inverted_index()
-    query = readData.remove_punctuation(query)
-    query = readData.handle_case_folding(query)
+    term_count_dict = Read_data.read_term_count()
+    inverted_index_dict = Read_data.read_inverted_index()
+    query = Read_data.remove_punctuation(query)
+    query = Read_data.handle_case_folding(query)
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
 
