@@ -9,21 +9,26 @@ def create_index(src_directory_path, file_names,  top_k):
     inverted_index = {}
     # stores all terms in each document
     terms_per_document = []
-#     
-#     files_in_directory=[]
-#     # Opening Directory where clean corpus is stored
-#     for directory in os.walk(src_directory_path):
-#         for file in directory:
-#             files_in_directory = file
+     
+    files_in_directory=[]
+    
+    if len(file_names) == 0:
+        # Opening Directory where clean corpus is stored
+        for directory in os.walk(src_directory_path):
+            for file in directory:
+                files_in_directory = file
+    else:
+        files_in_directory = file_names
 
     #counter = 1
-    #for clean_file in files_in_directory:
-    for clean_file in file_names:
-        with(open(src_directory_path + '/' + clean_file + '.txt', 'r+', encoding='utf-8')) as f:
-        #with(open(src_directory_path + '/' + clean_file, 'r+', encoding='utf-8')) as f:
+    for clean_file in files_in_directory:
+        if(len(file_names) != 0):
+            clean_file += '.txt' 
+            
+        with(open(src_directory_path + '/' + clean_file, 'r+', encoding='utf-8')) as f:
 
             # stripping .txt from file name
-            # clean_file = clean_file[:-4]
+            clean_file = clean_file[:-4]
 
             # Using nltk library to create terms
             terms_list = f.read().split()
@@ -45,7 +50,8 @@ def create_index(src_directory_path, file_names,  top_k):
         #print("indexed created for file "+ str(counter) +" - " + clean_file + " having terms = " + str(len(unique_terms)))
         #counter +=1
 
-    
+    if(len(file_names) != 0):
+        write_inverted_index(inverted_index)
 
     # sorting inverted index
     doc_sorted_by_term_count = sort_index(inverted_index)
@@ -93,6 +99,12 @@ def sort_index(inverted_index):
     
     return document_frequency_sorted_index_by_count
 
+
+def write_inverted_index(inverted_index):
+    
+    with open('inverted_index.txt', 'w', encoding='utf-8') as f:
+        for key in inverted_index:
+            f.write(str(key) + " : " + str(len(inverted_index[key])) + " : "+ str(inverted_index[key]) + "\n")
 
 # finding proximity of two terms using k.It is not case sensitive and order does not matter.
 def find_proximity(src_directory_path, k, keyword1, keyword2):

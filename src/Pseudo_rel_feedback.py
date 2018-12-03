@@ -1,6 +1,5 @@
 import os
-from src import BM25
-from src import Indexer
+import BM25, Indexer
 
 
 # the current working directory
@@ -48,4 +47,4 @@ def calculate_score(query_id,original_query_text):
     score_dict = BM25.bm25(str(query_id)+"_new", new_query)
         
 
-calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")
+# calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")

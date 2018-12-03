@@ -1,0 +1,15 @@
+# IntelliJ
+.idea
+*.iml
+
+# Eclipse
+.settings
+.metadata
+
+
+*.txt
+*.html
+
+
+
+__pycache__

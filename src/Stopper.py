@@ -1,8 +1,7 @@
 import os
-from bs4 import BeautifulSoup
+
 
 # It gets a output folder in current source path.
-
 common_words_file = "./test_collection/common_words"
 
 src_directory = "./output_files/clean_corpus/"
@@ -31,13 +30,13 @@ def generate_corpus_without_stop_words():
             processed_text = f.read()
             new_processed_text = ""
 
-            processTextArray = processed_text.split(" ")
+            process_text_array = processed_text.split(" ")
 
-            for currentWord in processTextArray:
-                if currentWord in stop_list:
+            for current_word in process_text_array:
+                if current_word in stop_list:
                     continue;
                 else:
-                    new_processed_text = new_processed_text + " " + currentWord
+                    new_processed_text = new_processed_text + " " + current_word
 
             fileName = str(file).split(".")[0]
             with open(dst_directory + fileName + ".txt", 'w', encoding='utf-8') as f:
@@ -52,4 +51,4 @@ def get_stop_words():
         stop_list = common_words_text.split("\n")
     return stop_list
 
-#generate_corpus_without_stop_words()
+generate_corpus_without_stop_words()

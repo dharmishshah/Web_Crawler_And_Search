@@ -1,3 +1,4 @@
+
 from src import JM_Query_Likelihood, TF_IDF, BM25
 from src import Indexer
 from src import Stopper
@@ -6,6 +7,7 @@ from src import Snippet_generation
 from src import Generate_corpus
 import os
 from bs4 import BeautifulSoup
+from src import Pseudo_rel_feedback
 
 # It gets a output folder in current source path.
 current_directory = os.getcwd()
@@ -24,10 +26,8 @@ def main():
     # Generate_corpus.generate_corpus(src_directory_path,dst_directory_path,True,True)
     #
     # #indexing for unigram with dgaps
-    # Indexer.create_index(dst_directory_path, True, 100)
+    Indexer.create_index('./test_collection/corpus', [], 0)
     #
-    # #indexing for unigram without dgaps
-    # Indexer.create_index(dst_directory_path, False, 100)
     #
     # #ranking using JM Query likelihood
     # JM_Query_Likelihood.jm_query_likelihood(1,"What articles exist which deal with TSS (Time Sharing System), an"
@@ -46,6 +46,8 @@ def main():
 
     # generating corpus with stemming
     #Stemmer.generate_corpus_from_stem_file()
+
+    Pseudo_rel_feedback.calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")
 
     # snippet generation for retrieval models
     # Snippet_generation.generate_snippet(1,"What articles exist which deal with TSS (Time Sharing System), an"

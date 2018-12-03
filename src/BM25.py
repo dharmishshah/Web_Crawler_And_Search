@@ -2,8 +2,7 @@ from collections import Counter
 from collections import OrderedDict
 import math
 import os
-
-from src import Read_data
+import Read_data
 
 
 # The current working directory
