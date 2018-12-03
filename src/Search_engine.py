@@ -41,7 +41,7 @@ def main():
     #               + "operating system for IBM computers?")
 
     # generating corpus with no stopwords
-    #Stopper.generate_corpus_without_stop_words()
+    Stopper.generate_corpus_without_stop_words()
 
     # generating corpus with stemming
     Stemmer.generate_corpus_from_stem_file()
