@@ -1,6 +1,7 @@
 from src import JM_Query_Likelihood, TF_IDF, BM25
 from src import Indexer
 from src import Stopper
+from src import Stemmer
 from src import Generate_corpus
 import os
 from bs4 import BeautifulSoup
@@ -17,7 +18,6 @@ dst_directory_path = current_directory + "/output_files/clean_corpus/"
 
 def main():
 
-    Stopper.generate_corpus_without_stop_words()
 
     #generating corpus from raw documents, applying punctuation removal and case folding
     # Generate_corpus.generate_corpus(src_directory_path,dst_directory_path,True,True)
@@ -39,5 +39,14 @@ def main():
     # #ranking using bm 25
     # BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
     #               + "operating system for IBM computers?")
+
+    # generating corpus with no stopwords
+    #Stopper.generate_corpus_without_stop_words()
+
+    # generating corpus with stemming
+    Stemmer.generate_corpus_from_stem_file()
+
+
+
 
 main()
