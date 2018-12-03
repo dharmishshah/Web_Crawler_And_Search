@@ -3,7 +3,7 @@ from collections import OrderedDict
 import math
 import os
 
-import Read_data
+from src import Read_data
 
 
 # The current working directory

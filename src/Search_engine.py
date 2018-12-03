@@ -1,7 +1,7 @@
-import JM_Query_Likelihood, TF_IDF, BM25
-import Indexer
-import Stopper
-import Generate_corpus
+from src import JM_Query_Likelihood, TF_IDF, BM25
+from src import Indexer
+from src import Stopper
+from src import Generate_corpus
 import os
 from bs4 import BeautifulSoup
 

@@ -1,6 +1,6 @@
 import os
-import BM25
-import Indexer
+from src import BM25
+from src import Indexer
 
 
 # the current working directory
