@@ -6,9 +6,12 @@
 .settings
 .metadata
 
+src/output_files
 
-*.txt
 *.html
+
+src/sample
+
 
 
 
