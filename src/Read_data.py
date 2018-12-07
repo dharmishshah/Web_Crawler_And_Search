@@ -73,3 +73,7 @@ def remove_punctuation(query_text):
 def handle_case_folding(query_text):
     query_text = str(query_text).lower()
     return query_text
+
+def getQueries():
+
+

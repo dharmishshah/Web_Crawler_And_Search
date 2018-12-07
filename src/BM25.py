@@ -2,7 +2,7 @@ from collections import Counter
 from collections import OrderedDict
 import math
 import os
-import Read_data
+from src import Read_data
 
 
 # The current working directory
@@ -100,7 +100,8 @@ def bm25(query_id, query):
 
     query = query.replace(" ","_")
     # writing output in a file
-    f = open("./" + str(query_id) + "_bm_25.txt" , 'w+', encoding='utf-8')
+    f = open("./results/bm_25/" + str(query_id) + "_bm_25.txt" , 'w+', encoding='utf-8')
+
     count = 1
     for s in score_dict:
         f.write(str(query_id) + " Q0 " + str(s) + " " + str(count) + " " + str(score_dict[s]) + " BM_25 "
