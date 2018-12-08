@@ -75,5 +75,5 @@ def handle_case_folding(query_text):
     return query_text
 
 def getQueries():
-
+    print(0)
 
