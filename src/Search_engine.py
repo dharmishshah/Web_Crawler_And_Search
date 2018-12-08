@@ -50,7 +50,11 @@ def main():
     # run_jm()
     # run_tf_idf()
 
-    # Pseudo_rel_feedback.calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")
+#     query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+#     q_id=0
+#     for query in query_dict:
+#         q_id+=1
+#         Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
     
     
     Evaluation.evaluate_docs()

@@ -1,6 +1,6 @@
 import os
 
-baseline_dirs = ['bm_25', 'jm_query_likelihood', 'tf_idf']
+baseline_dirs = ['bm_25', 'jm_query_likelihood', 'tf_idf', 'prf']
 subdirs = ['', 'stemmed', 'stopped']
 
 pr_dir = 'precision_and_recall'
@@ -38,11 +38,14 @@ def evaluate_docs():
     
     dirs_to_traverse = []
     for d in baseline_dirs:
-        for s in subdirs:
-            if s == '':
-                dirs_to_traverse.append(d + '/')
-            else:
-                dirs_to_traverse.append(d + '_' + s + '/')
+        if d == 'prf':
+            dirs_to_traverse.append(d + '/')
+        else:
+            for s in subdirs:
+                if s == '':
+                    dirs_to_traverse.append(d + '/')
+                else:
+                    dirs_to_traverse.append(d + '_' + s + '/')
     
     for d in dirs_to_traverse:
         
@@ -160,7 +163,7 @@ def write_precision_and_recall_values(precision_dict, recall_dict, run_type):
             f.write('Doc_name\tPrecision\tRecall\n')
             for doc_name in doc_list:
                 f.write(doc_name + '\t')
-                f.write(str(precision_dict[q_id][doc_name]) + '\t')
+                f.write(str(precision_dict[q_id][doc_name]) + '\t\t')
                 f.write(str(recall_dict[q_id][doc_name]) + '\n')
                         
 
