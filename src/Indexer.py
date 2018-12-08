@@ -1,6 +1,11 @@
 import os
 from collections import OrderedDict
 from more_itertools import locate
+from src import Read_data
+
+current_directory = os.getcwd()
+
+src_directory_path = current_directory + "/indexes/"
 
 
 def create_index(src_directory_path, file_names, top_k, type):
@@ -22,7 +27,7 @@ def create_index(src_directory_path, file_names, top_k, type):
     else:
         files_in_directory = file_names
 
-    #counter = 1
+    counter = 1
     for clean_file in files_in_directory:
         if(len(file_names) != 0):
             clean_file += '.txt' 
@@ -51,8 +56,8 @@ def create_index(src_directory_path, file_names, top_k, type):
                     
 
         terms_per_document.append([clean_file, len(unique_terms)])
-        #print("indexed created for file "+ str(counter) +" - " + clean_file + " having terms = " + str(len(unique_terms)))
-        #counter +=1
+        print("indexed created for file "+ str(counter) +" - " + clean_file + " having terms = " + str(len(unique_terms)))
+        counter +=1
 
     if(len(file_names) == 0):
         write_inverted_index(inverted_index, type)
@@ -107,21 +112,20 @@ def sort_index(inverted_index):
 
 
 def write_inverted_index(inverted_index, type):
-    f = getFileType("inverted", type)
+    f = Read_data.getFileName(src_directory_path, "inverted_index_" + type)
     for key in inverted_index:
         f.write(str(key) + " : " + str(len(inverted_index[key])) + " : "+ str(inverted_index[key]) + "\n")
 
 
 def write_positional_index(position_index,type):
-    
-    f = getFileType("position",type)
+    f = Read_data.getFileName(src_directory_path, "position_index_" + type)
     for key in position_index:
             f.write(str(key) + " : " + str(position_index[key]) + "\n")
 
 
 def write_term_count(terms_per_document, type):
-    with open('term_count.txt', 'w', encoding='utf-8') as f:
-        for term in terms_per_document:
+    f = Read_data.getFileName(src_directory_path, "term_count_" + type)
+    for term in terms_per_document:
             f.write(str(term) + '\n')     
             
 # finding proximity of two terms using k.It is not case sensitive and order does not matter.
@@ -174,24 +178,3 @@ def find_proximity_in_range(proximity_list, k,keyword_position1,keyword_position
         proximity_list.append(str(doc) + ": " + str(position_list))
 
 
-
-
-def getFileType(indexType, corpusType):
-
-
-
-
-    if(corpusType == 'clean'):
-        f = open( 'indexes/' + indexType + '_index.txt', 'w', encoding='utf-8')
-        if os.path.exists(f):
-            os.mkdir(f)
-    elif(corpusType == 'stemmed'):
-        f = open('indexes/' + indexType + '_index_stemmed.txt', 'w', encoding='utf-8')
-        if os.path.exists(f):
-            os.mkdir(f)
-    elif(corpusType == 'stopped'):
-        f = open('indexes/' + indexType + '_index_stopped.txt', 'w', encoding='utf-8')
-        if os.path.exists(f):
-            os.mkdir(f)
-
-    return f

@@ -2,17 +2,20 @@ from collections import Counter
 from collections import OrderedDict
 import math
 import os
-import Read_data
+from src import Read_data
 
 
 # The current working directory
 current_directory = os.getcwd()
 
 # source file of inverted unigram index
-inverted_index_data = current_directory + "/inverted_index.txt"
+inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
 
 # source file of unigram term count of documents
-term_count_data = current_directory + "/term_count.txt"
+term_count_data = current_directory + "/indexes/term_count_clean.txt"
+
+dst_directory = current_directory + "/results/bm_25/"
+
 
 #bm25 parameters
 b = 0.75
@@ -27,12 +30,29 @@ term_count_dict = {}
 
 # calculating lm dirichlet smoothing
 def bm25(query_id, query, isStemming, isStopping):
-    term_count_dict = Read_data.read_term_count()
-    inverted_index_dict = Read_data.read_inverted_index()
+    global inverted_index_data,term_count_data, dst_directory
+
     query = Read_data.remove_punctuation(query)
     query = Read_data.handle_case_folding(query)
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
+
+
+    if isStemming:
+        inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
+        term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
+        dst_directory = current_directory + "/results/bm_25_stemmed"
+        f = Read_data.getFileName(dst_directory, str(query_id))
+    elif isStopping:
+        inverted_index_data = current_directory + "/indexes/inverted_index_stopped.txt"
+        term_count_data = current_directory + "/indexes/term_count_stopped.txt"
+        dst_directory = current_directory + "/results/bm_25_stopped"
+        f = Read_data.getFileName(dst_directory, str(query_id))
+    else:
+        f = Read_data.getFileName(dst_directory, str(query_id))
+
+    term_count_dict = Read_data.read_term_count(term_count_data)
+    inverted_index_dict = Read_data.read_inverted_index(inverted_index_data)
 
     q_dict = {}
     score_dict = {}
@@ -94,13 +114,11 @@ def bm25(query_id, query, isStemming, isStopping):
             index+=1
 
         score_dict[every_doc] = score
-        #print("bm25 calculated for - " + every_doc)
+        print("bm25 calculated for - " + every_doc)
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 
     query = query.replace(" ","_")
-    # writing output in a file
-    f = open("./results/bm_25/" + str(query_id) + "_bm_25.txt" , 'w+', encoding='utf-8')
 
     count = 1
     for s in score_dict:
@@ -109,6 +127,7 @@ def bm25(query_id, query, isStemming, isStopping):
         if(count == 100):
             break;
         count+=1
-     
+    f.close()
+
     
     return score_dict

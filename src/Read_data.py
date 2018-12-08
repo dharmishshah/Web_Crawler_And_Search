@@ -4,12 +4,6 @@ import re
 # It gets a output folder in current source path.
 current_directory = os.getcwd()
 
-# source file of inverted unigram index
-inverted_index_data = current_directory + "/inverted_index.txt"
-
-# source file of unigram term count of documents
-term_count_data = current_directory + "/term_count.txt"
-
 # value of lambda
 lambdaValue = 0.35
 
@@ -21,8 +15,8 @@ term_count_dict = {}
 
 
 # reading term count from a file
-def read_term_count():
-    f = open(term_count_data, 'r+', encoding='utf-8')
+def read_term_count(file):
+    f = open(file, 'r+', encoding='utf-8')
     input = f.read();
     terms = input.split("\n");
     for term in terms:
@@ -33,8 +27,8 @@ def read_term_count():
 
 
 # reading word and their respective documents from a file
-def read_inverted_index():
-    f = open(inverted_index_data, 'r+', encoding='utf-8')
+def read_inverted_index(file):
+    f = open(file, 'r+', encoding='utf-8')
     input = f.read();
     terms = input.split("\n");
     for term in terms:
@@ -77,3 +71,12 @@ def handle_case_folding(query_text):
 def getQueries():
     print(0)
 
+
+def getFileName(src_directory_path, fileName):
+
+    if not os.path.exists(src_directory_path):
+        os.mkdir(src_directory_path)
+
+    f = open( src_directory_path + '/' + fileName + '.txt', 'w', encoding='utf-8')
+
+    return f
