@@ -30,20 +30,20 @@ def main():
 
     #generate_indexes()
 
-    query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
-    for query in query_dict:
-        run_bm_25(int(query),query_dict.get(query),False)
-        run_jm(int(query), query_dict.get(query), False)
-        run_tf_idf(int(query), query_dict.get(query), False)
-        print("done for query - " + query)
+    # query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+    # for query in query_dict:
+    #     run_bm_25(int(query),query_dict.get(query),False)
+    #     run_jm(int(query), query_dict.get(query), False)
+    #     run_tf_idf(int(query), query_dict.get(query), False)
+    #     print("done for query - " + query)
 
 
     stemmed_query_dict = Read_data.get_query_stemmed(query_dir + "cacm_stem.query.txt")
     for query in stemmed_query_dict:
         run_bm_25(int(query),stemmed_query_dict.get(query),True)
         run_jm(int(query), stemmed_query_dict.get(query), True)
-        run_tf_idf(int(query), query_dict.get(query), True)
-        print("done for stemmed query - " + query)
+        run_tf_idf(int(query), stemmed_query_dict.get(query), True)
+        print("done for stemmed query - " + str(query))
 
 
     # run_bm_25()
