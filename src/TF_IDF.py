@@ -1,4 +1,4 @@
-from src import Read_data
+import Read_data
 import os
 import math
 from collections import OrderedDict

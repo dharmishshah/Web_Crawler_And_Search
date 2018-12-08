@@ -6,9 +6,10 @@ import Stemmer
 import Snippet_generation
 import Generate_corpus
 import os
-from src import Read_data
+import Read_data
 from bs4 import BeautifulSoup
 import Pseudo_rel_feedback
+import Evaluation
 
 # It gets a output folder in current source path.
 current_directory = os.getcwd()
@@ -30,27 +31,34 @@ def main():
 
     #generate_indexes()
 
-    # query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
-    # for query in query_dict:
-    #     run_bm_25(int(query),query_dict.get(query),False)
-    #     run_jm(int(query), query_dict.get(query), False)
-    #     run_tf_idf(int(query), query_dict.get(query), False)
-    #     print("done for query - " + query)
+#     query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+#     for query in query_dict:
+#         run_bm_25(int(query),query_dict.get(query),False)
+#         run_jm(int(query), query_dict.get(query), False)
+#         run_tf_idf(int(query), query_dict.get(query), False)
+#         print("done for query - " + query)
 
-
-    stemmed_query_dict = Read_data.get_query_stemmed(query_dir + "cacm_stem.query.txt")
-    for query in stemmed_query_dict:
-        run_bm_25(int(query),stemmed_query_dict.get(query),True)
-        run_jm(int(query), stemmed_query_dict.get(query), True)
-        run_tf_idf(int(query), stemmed_query_dict.get(query), True)
-        print("done for stemmed query - " + str(query))
+    # stemmed_query_dict = Read_data.get_query_stemmed(query_dir + "cacm_stem.query.txt")
+    # for query in stemmed_query_dict:
+    #     run_bm_25(int(query),stemmed_query_dict.get(query),True)
+    #     run_jm(int(query), stemmed_query_dict.get(query), True)
+    #     run_tf_idf(int(query), stemmed_query_dict.get(query), True)
+    #     print("done for stemmed query - " + str(query))
 
 
     # run_bm_25()
     # run_jm()
     # run_tf_idf()
 
-    # Pseudo_rel_feedback.calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")
+#     query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+#     q_id=0
+#     for query in query_dict:
+#         q_id+=1
+#         Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
+    
+    
+    Evaluation.evaluate_docs()
+    
 
 
 def generate_corpuses():

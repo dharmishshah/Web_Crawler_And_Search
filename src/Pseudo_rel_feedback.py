@@ -14,7 +14,7 @@ def calculate_score(query_id,original_query_text):
     
     # first run 
     # to fetch relevant results using bm25 function 
-    score_dict = BM25.bm25(query_id, original_query_text)
+    score_dict = BM25.bm25(query_id, original_query_text, False, False)
     
     
     # the top_k files to be searched for relevant words
@@ -33,7 +33,7 @@ def calculate_score(query_id,original_query_text):
     
     
     # new query to be appended to original query for fetching highly relevant results
-    refined_query = Indexer.create_index('./output_files/clean_corpus_with_no_stopwords', file_names, top_k)
+    refined_query = Indexer.create_index('./output_files/clean_corpus_with_no_stopwords', file_names, top_k, "clean")
     
     # expanding the query
     new_query = original_query_text + " " +refined_query
@@ -44,7 +44,7 @@ def calculate_score(query_id,original_query_text):
     
     # second_run
     # to fetch the relevant documents to be shown to the user sorted by their relevance
-    score_dict = BM25.bm25(str(query_id)+"_prf", new_query)
+    score_dict = BM25.bm25(str(query_id)+"_prf", new_query, False, False)
         
 
 # calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")

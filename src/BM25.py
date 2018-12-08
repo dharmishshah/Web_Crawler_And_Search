@@ -2,7 +2,7 @@ from collections import Counter
 from collections import OrderedDict
 import math
 import os
-from src import Read_data
+import Read_data
 
 
 # The current working directory
@@ -50,6 +50,8 @@ def bm25(query_id, query, isStemming, isStopping):
         term_count_data = current_directory + "/indexes/term_count_stopped.txt"
         dst_directory = current_directory + "/results/bm_25_stopped"
         f = Read_data.getFileName(dst_directory, str(query_id))
+    elif 'prf' in str(query_id):
+        f = Read_data.getFileName(current_directory + "/results/prf", query_id.split('_')[0])
     else:
         f = Read_data.getFileName(dst_directory, str(query_id))
 

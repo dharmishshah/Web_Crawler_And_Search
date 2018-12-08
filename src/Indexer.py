@@ -1,7 +1,7 @@
 import os
 from collections import OrderedDict
 from more_itertools import locate
-from src import Read_data
+import Read_data
 
 current_directory = os.getcwd()
 
