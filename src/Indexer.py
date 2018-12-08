@@ -54,9 +54,10 @@ def create_index(src_directory_path, file_names, top_k):
         #print("indexed created for file "+ str(counter) +" - " + clean_file + " having terms = " + str(len(unique_terms)))
         #counter +=1
 
-    if(len(file_names) != 0):
+    if(len(file_names) == 0):
         write_inverted_index(inverted_index)
         write_positional_index(position_index)
+        write_term_count(terms_per_document)
 
     # sorting inverted index
     doc_sorted_by_term_count = sort_index(inverted_index)
@@ -117,7 +118,12 @@ def write_positional_index(position_index):
     f = open('position_inverted_index.txt', 'w', encoding='utf-8')
     for key in position_index:
             f.write(str(key) + " : " + str(position_index[key]) + "\n")
-            
+
+
+def write_term_count(terms_per_document):
+    with open('term_count.txt', 'w', encoding='utf-8') as f:
+        for term in terms_per_document:
+            f.write(str(term) + '\n')     
             
 # finding proximity of two terms using k.It is not case sensitive and order does not matter.
 def find_proximity(src_directory_path, k, keyword1, keyword2):
