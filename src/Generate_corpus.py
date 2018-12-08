@@ -69,7 +69,7 @@ def handle_case_folding(processed_text):
 # handles punctuation on processed text
 def handle_punctuation(processed_text):
     processed_text_after = ""
-    punctuation_list_text = [',','.','!','#','$','%','^','&','*','(',')','_','+','[',']',';','\'','/','\\','{','}',':','"','<','>','?','=','`','~','-']
+    punctuation_list_text = [',','.','!','#','$','%','^','&','*','(',')','_','+','[',']',';','\'','/','\\','{','}',':','"','<','>','?','=','`','~', '-']
     punctuation_list_digits =['!','#','$','%','^','&','*','(',')','_','+','[',']',';','\'','/','\\','{','}',':','"','<','>','?','=']
 
     terms_list = processed_text.split()

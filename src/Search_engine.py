@@ -23,17 +23,23 @@ def main():
 
 
     #generating corpus from raw documents, applying punctuation removal and case folding
-    Generate_corpus.generate_corpus(src_directory_path,dst_directory_path,True,True)
+    #Generate_corpus.generate_corpus(src_directory_path,dst_directory_path,True,True)
 
     # generating corpus with no stopwords
-    Stopper.generate_corpus_without_stop_words()
+    #Stopper.generate_corpus_without_stop_words()
 
     # generating corpus with stemming
-    Stemmer.generate_corpus_from_stem_file()
+    #Stemmer.generate_corpus_from_stem_file()
 
 
     #indexing for unigram with dgaps
-    #Indexer.create_index('./test_collection/corpus', [], 0)
+    Indexer.create_index('./output_files/clean_corpus', [], 0, "clean")
+
+    # indexing for unigram with dgaps
+    Indexer.create_index('./output_files/clean_corpus_with_no_stopwords', [], 0, "stopped")
+
+    # indexing for unigram with dgaps
+    Indexer.create_index('./output_files/clean_corpus_with_stemming', [], 0, "stemmed")
 
 
     # #ranking using JM Query likelihood

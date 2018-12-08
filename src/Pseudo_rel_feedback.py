@@ -44,7 +44,7 @@ def calculate_score(query_id,original_query_text):
     
     # second_run
     # to fetch the relevant documents to be shown to the user sorted by their relevance
-    score_dict = BM25.bm25(str(query_id)+"_new", new_query)
+    score_dict = BM25.bm25(str(query_id)+"_prf", new_query)
         
 
 # calculate_score(1, "What articles exist which deal with TSS (Time Sharing System), an operating system for IBM computers?")
