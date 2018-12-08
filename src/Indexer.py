@@ -3,7 +3,7 @@ from collections import OrderedDict
 from more_itertools import locate
 
 
-def create_index(src_directory_path, file_names, top_k):
+def create_index(src_directory_path, file_names, top_k, type):
     # Dictionary to store inverted index
     inverted_index = {}
     # stores all terms in each document
@@ -55,9 +55,9 @@ def create_index(src_directory_path, file_names, top_k):
         #counter +=1
 
     if(len(file_names) == 0):
-        write_inverted_index(inverted_index)
-        write_positional_index(position_index)
-        write_term_count(terms_per_document)
+        write_inverted_index(inverted_index, type)
+        write_positional_index(position_index, type)
+        write_term_count(terms_per_document, type)
 
     # sorting inverted index
     doc_sorted_by_term_count = sort_index(inverted_index)
@@ -106,21 +106,20 @@ def sort_index(inverted_index):
     return document_frequency_sorted_index_by_count
 
 
-def write_inverted_index(inverted_index):
-    
-    with open('inverted_index.txt', 'w', encoding='utf-8') as f:
-        for key in inverted_index:
-            f.write(str(key) + " : " + str(len(inverted_index[key])) + " : "+ str(inverted_index[key]) + "\n")
+def write_inverted_index(inverted_index, type):
+    f = getFileType("inverted", type)
+    for key in inverted_index:
+        f.write(str(key) + " : " + str(len(inverted_index[key])) + " : "+ str(inverted_index[key]) + "\n")
 
 
-def write_positional_index(position_index):
+def write_positional_index(position_index,type):
     
-    f = open('position_inverted_index.txt', 'w', encoding='utf-8')
+    f = getFileType("position",type)
     for key in position_index:
             f.write(str(key) + " : " + str(position_index[key]) + "\n")
 
 
-def write_term_count(terms_per_document):
+def write_term_count(terms_per_document, type):
     with open('term_count.txt', 'w', encoding='utf-8') as f:
         for term in terms_per_document:
             f.write(str(term) + '\n')     
@@ -177,5 +176,22 @@ def find_proximity_in_range(proximity_list, k,keyword_position1,keyword_position
 
 
 
-#create_index(os.getcwd()+'/sample', [], 5)
+def getFileType(indexType, corpusType):
 
+
+
+
+    if(corpusType == 'clean'):
+        f = open( 'indexes/' + indexType + '_index.txt', 'w', encoding='utf-8')
+        if os.path.exists(f):
+            os.mkdir(f)
+    elif(corpusType == 'stemmed'):
+        f = open('indexes/' + indexType + '_index_stemmed.txt', 'w', encoding='utf-8')
+        if os.path.exists(f):
+            os.mkdir(f)
+    elif(corpusType == 'stopped'):
+        f = open('indexes/' + indexType + '_index_stopped.txt', 'w', encoding='utf-8')
+        if os.path.exists(f):
+            os.mkdir(f)
+
+    return f
