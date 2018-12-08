@@ -26,7 +26,7 @@ inverted_index_dict = {}
 term_count_dict = {}
 
 # calculating lm dirichlet smoothing
-def bm25(query_id, query):
+def bm25(query_id, query, isStemming, isStopping):
     term_count_dict = Read_data.read_term_count()
     inverted_index_dict = Read_data.read_inverted_index()
     query = Read_data.remove_punctuation(query)
