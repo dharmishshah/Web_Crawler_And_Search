@@ -1,7 +1,7 @@
 import os
 import re
 from bs4 import BeautifulSoup
-from src import Read_data
+import Read_data
 
 from collections import OrderedDict
 
