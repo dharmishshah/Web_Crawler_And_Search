@@ -1,5 +1,6 @@
 import os
 import re
+from bs4 import BeautifulSoup
 
 # It gets a output folder in current source path.
 current_directory = os.getcwd()
@@ -80,3 +81,26 @@ def getFileName(src_directory_path, fileName):
     f = open( src_directory_path + '/' + fileName + '.txt', 'w', encoding='utf-8')
 
     return f
+
+
+def get_query(query_file):
+    read_doc = open(query_file)
+    soup = BeautifulSoup(read_doc.read(), "html.parser")
+    doc_arr = soup.findAll("doc")
+    query_dic = {}
+    for ind_doc in doc_arr:
+        soup_ind = BeautifulSoup(str(ind_doc), "html.parser")
+        doc_id = str(soup_ind.find("docno").text).strip()
+        soup_ind.find("docno").extract()
+        query_dic[doc_id] = str(soup_ind.text.replace("\n", " ").strip())
+    return query_dic
+
+
+def get_query_stemmed(query_file):
+    return_dictionary = {}
+    read_query_arr = open(query_file).read().split("\n")
+    i = 1
+    for query in read_query_arr:
+        return_dictionary[i] = query
+        i+=1
+    return return_dictionary

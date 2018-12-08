@@ -13,9 +13,6 @@ inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
 # source file of unigram term count of documents
 term_count_data = current_directory + "/indexes/term_count_clean.txt"
 
-# value of lambda
-lambdaValue = 0.35
-
 # dictionary which maintains words as keys and documents as values (including duplicates)
 inverted_index_dict = {}
 
@@ -30,6 +27,7 @@ def main(queryId, query,dir):
 # calculating lm dirichlet smoothing
 def tf_idf(queryId, query, isStemming, isStopping):
     global term_count_data,inverted_index_data,dst_directory
+    reset_dir()
     query = Read_data.remove_punctuation(query)
     query = Read_data.handle_case_folding(query)
     # splitting search query into terms separated by space
@@ -89,4 +87,12 @@ def tf_idf(queryId, query, isStemming, isStopping):
             break;
         count+=1
     f.close()
+
+def reset_dir():
+    global dst_directory, inverted_index_data, term_count_data
+    # source file of inverted unigram index
+    inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
+    # source file of unigram term count of documents
+    term_count_data = current_directory + "/indexes/term_count_clean.txt"
+    dst_directory = current_directory + "/results/tf_idf/"
 

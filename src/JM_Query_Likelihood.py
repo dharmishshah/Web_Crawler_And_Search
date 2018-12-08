@@ -28,6 +28,7 @@ dst_directory = current_directory + "/results/jm_query_likelihood/"
 # calculating lm dirichlet smoothing
 def jm_query_likelihood(queryId, query, isStemming,isStopping):
     global inverted_index_data,term_count_data, dst_directory
+    reset_dir()
     query = Read_data.remove_punctuation(query)
     query = Read_data.handle_case_folding(query)
     # splitting search query into terms separated by space
@@ -111,3 +112,12 @@ def jm_query_likelihood(queryId, query, isStemming,isStopping):
             break;
         count+=1
     f.close()
+
+def reset_dir():
+    global dst_directory, inverted_index_data, term_count_data
+    # source file of inverted unigram index
+    inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
+    # source file of unigram term count of documents
+    term_count_data = current_directory + "/indexes/term_count_clean.txt"
+    dst_directory = current_directory + "/results/jm_query_likelihood/"
+

@@ -32,6 +32,8 @@ term_count_dict = {}
 def bm25(query_id, query, isStemming, isStopping):
     global inverted_index_data,term_count_data, dst_directory
 
+    reset_dir()
+
     query = Read_data.remove_punctuation(query)
     query = Read_data.handle_case_folding(query)
     # splitting search query into terms separated by space
@@ -85,6 +87,7 @@ def bm25(query_id, query, isStemming, isStopping):
 
     average_document_length = word_count / len(term_count_dict)
 
+    counter = 1
     for every_doc in term_count_dict:
         # total number of terms in a document i.e. |D|
         term_count = term_count_docs.get(every_doc)
@@ -114,7 +117,8 @@ def bm25(query_id, query, isStemming, isStopping):
             index+=1
 
         score_dict[every_doc] = score
-        print("bm25 calculated for - " + every_doc)
+        print("bm25 calculated for - " + every_doc + ' for query ' + str(query_id))
+
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 
@@ -131,3 +135,12 @@ def bm25(query_id, query, isStemming, isStopping):
 
     
     return score_dict
+
+
+def reset_dir():
+    global dst_directory, inverted_index_data, term_count_data
+    # source file of inverted unigram index
+    inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
+    # source file of unigram term count of documents
+    term_count_data = current_directory + "/indexes/term_count_clean.txt"
+    dst_directory = current_directory + "/results/bm_25/"
