@@ -50,5 +50,3 @@ def get_stop_words():
         common_words_text = f.read()
         stop_list = common_words_text.split("\n")
     return stop_list
-
-generate_corpus_without_stop_words()

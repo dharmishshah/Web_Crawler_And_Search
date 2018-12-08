@@ -22,7 +22,7 @@ def create_index(src_directory_path, file_names, top_k, type):
     else:
         files_in_directory = file_names
 
-    #counter = 1
+    counter = 1
     for clean_file in files_in_directory:
         if(len(file_names) != 0):
             clean_file += '.txt' 
@@ -51,10 +51,10 @@ def create_index(src_directory_path, file_names, top_k, type):
                     
 
         terms_per_document.append([clean_file, len(unique_terms)])
-        #print("indexed created for file "+ str(counter) +" - " + clean_file + " having terms = " + str(len(unique_terms)))
-        #counter +=1
+        print("indexed created for file "+ str(counter) +" - " + clean_file + " having terms = " + str(len(unique_terms)))
+        counter +=1
 
-    if(len(file_names) != 0):
+    if(len(file_names) == 0):
 
         write_inverted_index(inverted_index, type)
         write_positional_index(position_index)
