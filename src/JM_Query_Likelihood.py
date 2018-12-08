@@ -39,12 +39,12 @@ def jm_query_likelihood(queryId, query, isStemming,isStopping):
     if isStemming:
         inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
         term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
-        dst_directory = current_directory + "/resultsjm_query_likelihood_stemmed"
+        dst_directory = current_directory + "/results/jm_query_likelihood_stemmed"
         f = Read_data.getFileName(dst_directory, str(queryId))
 
     if isStopping:
-        inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
-        term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
+        inverted_index_data = current_directory + "/indexes/inverted_index_stopped.txt"
+        term_count_data = current_directory + "/indexes/term_count_stopped.txt"
         dst_directory = current_directory + "/results/jm_query_likelihood_stopped"
         f = Read_data.getFileName(dst_directory, str(queryId))
 
@@ -110,3 +110,4 @@ def jm_query_likelihood(queryId, query, isStemming,isStopping):
         if(count == 100):
             break;
         count+=1
+    f.close()

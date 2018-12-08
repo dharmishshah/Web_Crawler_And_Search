@@ -1,4 +1,4 @@
-import Read_data
+from src import Read_data
 import os
 import math
 from collections import OrderedDict
@@ -8,10 +8,10 @@ import re
 current_directory = os.getcwd()
 
 # source file of inverted unigram index
-inverted_index_data = current_directory + "/indexes/inverted_index.txt"
+inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
 
 # source file of unigram term count of documents
-term_count_data = current_directory + "/indexes/term_count.txt"
+term_count_data = current_directory + "/indexes/term_count_clean.txt"
 
 # value of lambda
 lambdaValue = 0.35
@@ -41,17 +41,17 @@ def tf_idf(queryId, query, isStemming, isStopping):
     if isStemming:
         inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
         term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
-        dst_directory = current_directory + "/resultsjm_query_likelihood_stemmed"
+        dst_directory = current_directory + "/results/tf_idf_stemmed"
         f = Read_data.getFileName(dst_directory, str(queryId))
 
     if isStopping:
-        inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
-        term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
-        dst_directory = current_directory + "/results/jm_query_likelihood_stopped"
+        inverted_index_data = current_directory + "/indexes/inverted_index_stopped.txt"
+        term_count_data = current_directory + "/indexes/term_count_stopped.txt"
+        dst_directory = current_directory + "/results/tf_idf_stopped"
         f = Read_data.getFileName(dst_directory, str(queryId))
 
-    term_count_dict = Read_data.read_term_count()
-    inverted_index_dict = Read_data.read_inverted_index()
+    term_count_dict = Read_data.read_term_count(term_count_data)
+    inverted_index_dict = Read_data.read_inverted_index(inverted_index_data)
 
     q_dict = {}
     score_dict = {}
@@ -88,4 +88,5 @@ def tf_idf(queryId, query, isStemming, isStopping):
         if(count == 100):
             break;
         count+=1
+    f.close()
 

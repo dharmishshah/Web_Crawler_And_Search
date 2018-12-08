@@ -38,19 +38,17 @@ def bm25(query_id, query, isStemming, isStopping):
     query_terms = query.split(" ")
 
 
-    # writing output in a file
-    f = Read_data.getFileName(dst_directory, str(query_id))
-
     if isStemming:
         inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
         term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
         dst_directory = current_directory + "/results/bm_25_stemmed"
         f = Read_data.getFileName(dst_directory, str(query_id))
-
-    if isStopping:
-        inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
-        term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
+    elif isStopping:
+        inverted_index_data = current_directory + "/indexes/inverted_index_stopped.txt"
+        term_count_data = current_directory + "/indexes/term_count_stopped.txt"
         dst_directory = current_directory + "/results/bm_25_stopped"
+        f = Read_data.getFileName(dst_directory, str(query_id))
+    else:
         f = Read_data.getFileName(dst_directory, str(query_id))
 
     term_count_dict = Read_data.read_term_count(term_count_data)
@@ -116,7 +114,7 @@ def bm25(query_id, query, isStemming, isStopping):
             index+=1
 
         score_dict[every_doc] = score
-        #print("bm25 calculated for - " + every_doc)
+        print("bm25 calculated for - " + every_doc)
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 
@@ -129,6 +127,7 @@ def bm25(query_id, query, isStemming, isStopping):
         if(count == 100):
             break;
         count+=1
-     
+    f.close()
+
     
     return score_dict

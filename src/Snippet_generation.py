@@ -16,7 +16,7 @@ src_directory = os.getcwd()+"/output_files/clean_corpus/"
 def generate_snippet(queryId, query, retrieval_model, window_size):
 
     snippet = ""
-    with open(current_directory + "/" + str(queryId) + "_" + retrieval_model + ".txt", 'r+', encoding='utf-8') as f:
+    with open(current_directory + "/results/" + retrieval_model + '/' + str(queryId) + ".txt", 'r+', encoding='utf-8') as f:
         processed_text = f.read()
         files = processed_text.split("\n")
 
@@ -25,7 +25,7 @@ def generate_snippet(queryId, query, retrieval_model, window_size):
         query_terms  = query.split(" ")
         sentences = {}
 
-        destination_file = open(current_directory + "/" + str(queryId) + "_" + retrieval_model + "_snippet.txt", 'w', encoding='utf-8')
+        destination_file = open(current_directory + "/results/" + retrieval_model + '/' + str(queryId) + "_snippet.txt", 'w', encoding='utf-8')
 
         for file in files:
             if file:
