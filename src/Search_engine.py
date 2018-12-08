@@ -20,9 +20,6 @@ src_directory_path = current_directory + "/test_collection/corpus/"
 dst_directory_path = current_directory + "/output_files/clean_corpus/"
 
 def main():
-    # indexing for unigram with dgaps
-    Indexer.create_index('./output_files/clean_corpus', ['test'], 0, "clean")
-
 
     #generating corpus from raw documents, applying punctuation removal and case folding
     # Generate_corpus.generate_corpus(src_directory_path,dst_directory_path,True,True)
@@ -33,27 +30,46 @@ def main():
     # generating corpus with stemming
     # Stemmer.generate_corpus_from_stem_file()
 
-
-
+    # indexing for unigram with dgaps
+    #Indexer.create_index('./output_files/clean_corpus', [], 0, "clean")
 
     # indexing for unigram with dgaps
-    Indexer.create_index('./output_files/clean_corpus_with_no_stopwords', [], 0, "stopped")
+    #Indexer.create_index('./output_files/clean_corpus_with_no_stopwords', [], 0, "stopped")
 
     # indexing for unigram with dgaps
-    Indexer.create_index('./output_files/clean_corpus_with_stemming', [], 0, "stemmed")
+    #Indexer.create_index('./output_files/clean_corpus_with_stemming', [], 0, "stemmed")
 
 
     # #ranking using JM Query likelihood
-    # JM_Query_Likelihood.jm_query_likelihood(1,"What articles exist which deal with TSS (Time Sharing System), an"
-    # + "operating system for IBM computers?",current_directory)
+    JM_Query_Likelihood.jm_query_likelihood(1,"What articles exist which deal with TSS (Time Sharing System), an"
+    + "operating system for IBM computers?",False,False)
+
+    JM_Query_Likelihood.jm_query_likelihood(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                                            + "operating system for IBM computers?",
+                                            True,False)
+
+    JM_Query_Likelihood.jm_query_likelihood(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                                            + "operating system for IBM computers?",False,True)
     #
     # #ranking using tf idf
-    # TF_IDF.tf_idf(1,"What articles exist which deal with TSS (Time Sharing System), an"
-    # + "operating system for IBM computers?",current_directory)
+    TF_IDF.tf_idf(1,"What articles exist which deal with TSS (Time Sharing System), an"
+    + "operating system for IBM computers?",False,False)
+
+    TF_IDF.tf_idf(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                  + "operating system for IBM computers?", False, False)
+
+    TF_IDF.tf_idf(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                  + "operating system for IBM computers?", False, False)
     #
     # #ranking using bm 25
-    # BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
-    #               + "operating system for IBM computers?")
+    BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
+                  + "operating system for IBM computers?",False, False)
+
+    BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
+              + "operating system for IBM computers?", True, False)
+
+    BM25.bm25(1, "What articles exist which deal with TSS (Time Sharing System), an"
+              + "operating system for IBM computers?", False, True)
 
 
 

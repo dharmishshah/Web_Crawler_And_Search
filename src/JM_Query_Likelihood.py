@@ -8,10 +8,10 @@ import re
 current_directory = os.getcwd()
 
 # source file of inverted unigram index
-inverted_index_data = current_directory + "/inverted_index.txt"
+inverted_index_data = current_directory + "/indexes/inverted_index_clean.txt"
 
 # source file of unigram term count of documents
-term_count_data = current_directory + "/term_count.txt"
+term_count_data = current_directory + "/indexes/term_count_clean.txt"
 
 # value of lambda
 lambdaValue = 0.35
@@ -22,15 +22,34 @@ inverted_index_dict = {}
 # dictionary which maintains documents as keys and term counts as values (including duplicates)
 term_count_dict = {}
 
+dst_directory = current_directory + "/results/jm_query_likelihood/"
+
 
 # calculating lm dirichlet smoothing
-def jm_query_likelihood(queryId, query, dir):
-    term_count_dict = Read_data.read_term_count()
-    inverted_index_dict = Read_data.read_inverted_index()
+def jm_query_likelihood(queryId, query, isStemming,isStopping):
+    global inverted_index_data,term_count_data, dst_directory
     query = Read_data.remove_punctuation(query)
     query = Read_data.handle_case_folding(query)
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
+
+    # writing output in a file
+    f = Read_data.getFileName(dst_directory, str(queryId))
+
+    if isStemming:
+        inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
+        term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
+        dst_directory = current_directory + "/resultsjm_query_likelihood_stemmed"
+        f = Read_data.getFileName(dst_directory, str(queryId))
+
+    if isStopping:
+        inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
+        term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
+        dst_directory = current_directory + "/results/jm_query_likelihood_stopped"
+        f = Read_data.getFileName(dst_directory, str(queryId))
+
+    term_count_dict = Read_data.read_term_count(term_count_data)
+    inverted_index_dict = Read_data.read_inverted_index(inverted_index_data)
 
     q_dict = {}
     score_dict = {}
@@ -84,8 +103,6 @@ def jm_query_likelihood(queryId, query, dir):
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 
     query = query.replace(" ","_")
-    # writing output in a file
-    f = open(dir + "/" + str(queryId) + "_jm_query_likelihood.txt" , 'w+', encoding='utf-8')
     count = 1
     for s in score_dict:
         f.write(str(queryId) + " Q0 " + str(s) + " " + str(count) + " " + str(score_dict[s]) + " JM_Query_Likelihood "
