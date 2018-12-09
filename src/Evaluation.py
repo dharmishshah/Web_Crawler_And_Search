@@ -2,7 +2,7 @@ import os
 import matplotlib.pyplot as plt
 
 
-baseline_dirs = ['bm_25', 'jm_query_likelihood', 'tf_idf', 'prf']
+baseline_dirs = ['bm_25', 'jm_query_likelihood', 'tf_idf', 'prf', 'lucene']
 subdirs = ['', 'stemmed', 'stopped']
 
 pr_dir = 'precision_and_recall'
@@ -41,7 +41,7 @@ def evaluate_docs():
     
     dirs_to_traverse = []
     for d in baseline_dirs:
-        if d == 'prf':
+        if d == 'prf' or d == 'lucene':
             dirs_to_traverse.append(d + '/')
         else:
             for s in subdirs:

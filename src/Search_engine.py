@@ -55,8 +55,7 @@ def main():
 #     for query in query_dict:
 #         q_id+=1
 #         Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
-    
-    
+
     #Evaluation.evaluate_docs()
     
 
