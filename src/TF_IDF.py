@@ -33,8 +33,6 @@ def tf_idf(queryId, query, isStemming, isStopping):
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
 
-    # writing output in a file
-    f = Read_data.getFileName(dst_directory, str(queryId))
 
     if isStemming:
         inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
@@ -46,6 +44,9 @@ def tf_idf(queryId, query, isStemming, isStopping):
         inverted_index_data = current_directory + "/indexes/inverted_index_stopped.txt"
         term_count_data = current_directory + "/indexes/term_count_stopped.txt"
         dst_directory = current_directory + "/results/tf_idf_stopped"
+        f = Read_data.getFileName(dst_directory, str(queryId))
+    else:
+        # writing output in a file
         f = Read_data.getFileName(dst_directory, str(queryId))
 
     term_count_dict = Read_data.read_term_count(term_count_data)
@@ -75,6 +76,7 @@ def tf_idf(queryId, query, isStemming, isStopping):
             if docs:
                 score = score + (fqi_D * math.log10(num_of_docs/len(docs)))
         score_dict[every_doc] = score
+        print("tf_idf calculated for - " + every_doc + ' for query ' + str(queryId))
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 

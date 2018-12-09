@@ -25,9 +25,10 @@ def generate_snippet(queryId, query, retrieval_model, window_size):
         query_terms  = query.split(" ")
         sentences = {}
 
-        destination_file = open(current_directory + "/results/" + retrieval_model + '/' + str(queryId) + "_snippet.txt", 'w', encoding='utf-8')
+        destination_file = open(current_directory + "/results/" + retrieval_model + '/' + str(queryId) + "_snippet.html", 'w', encoding='utf-8')
 
         for file in files:
+            destination_file.write("<br>")
             if file:
                 file_name = file.split(" ")[2]
                 with open(src_directory + file_name + ".txt", 'r+', encoding='utf-8') as file:
@@ -51,13 +52,20 @@ def generate_snippet(queryId, query, retrieval_model, window_size):
                     count = 1
                     destination_file.write("\n" + file_name + "\n")
                     overlap_position = []
+                    destination_file.write("<br>")
                     for sentence in sentences:
                         isOverlapping = False
                         for overlap in overlap_position:
                             if (abs(sentence - overlap)) <= window_size:
                                 isOverlapping = True;
                         if not isOverlapping:
-                            destination_file.write("..." + sentences.get(sentence)[1] + "...")
+                            current_sentence = sentences.get(sentence)[1]
+                            current_sent_list = current_sentence.split(" ")
+                            for query in query_terms:
+                                if query in current_sent_list:
+                                    current_sentence = current_sentence\
+                                        .replace("<b>" + query + "</b>",query).replace(query, "<b>" + query + "</b>")
+                            destination_file.write("..." + current_sentence + "...")
                             overlap_position.append(sentence)
                             if(count == 3):
                                 break;

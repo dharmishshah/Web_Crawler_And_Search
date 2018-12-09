@@ -70,7 +70,10 @@ def evaluate_docs():
                     file_total = files
                     
             # /2 because 1.txt and 1_snippet.txt
-            if(int(query_id) > (len(file_total)) / 2) and 'prf' not in d:
+            if(int(query_id) > len(file_total) / 2):
+                break
+
+            if (int(query_id) > len(file_total)) and 'prf' not in d:
                 break
             
             with open(os.getcwd() + '/results/' +d + str(query_id) + '.txt', 'r+', encoding='UTF-8') as f:

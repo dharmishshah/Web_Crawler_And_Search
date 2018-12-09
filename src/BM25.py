@@ -119,7 +119,7 @@ def bm25(query_id, query, isStemming, isStopping):
             index+=1
 
         score_dict[every_doc] = score
-        print("bm25 calculated for - " + every_doc + ' for query ' + str(query_id))
+        #print("bm25 calculated for - " + every_doc + ' for query ' + str(query_id))
 
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
