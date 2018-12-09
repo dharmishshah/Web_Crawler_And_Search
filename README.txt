@@ -34,6 +34,18 @@ Running the code - (Python 3.7)
 --> Before running search.py, you can change the files and directory names appropiately.
 --> Run the Search_engine.py
 
+
+Extra Credit (Advance Search)
+Running the code - (Python 3.7)
+--> Create a new Project in Pycharm (Or any other IDE)
+--> in the folder called "extraCredit" copy the folder QueryRelevence which contains "query.py" in the src folder.
+--> in the invertedIndex place the invertedindex file (or in the code point it the the proper file)
+--> place the stop word list in the stopWords folder (or in the code point it the the proper file)
+--> in the query folder place pre defined query or you can enter your own query in the console.
+--> Run the query.py.
+
+
+
 Output Files
 
 
@@ -63,6 +75,13 @@ Evaluation-
 5) 64 files are generated for each query for BM25 giving precision and recall after applying Pseudo Relevance feedback
 6) It also generates MAP, MRR, P@5 and P@20
 7) It also plots precision-recall curve(one curve per run.All runs are in one figure)
+
+ExtraCredit-
+we ran three pre defined queries for each for the advance search i.e "Exact Match", "Best Match" and "Ordered Best Proximity Match"
+1) 3 file are generated in the output inside the "output/ExactMatch" folder which contains the ranking of the collection.
+2) 3 file are generated in the output inside the "output/BestMatch" folder which contains the ranking of the collection.
+3) 3 file are generated in the output inside the "output/ProximityMatch" folder which contains the ranking of the collection.
+
 
 References - 
 
