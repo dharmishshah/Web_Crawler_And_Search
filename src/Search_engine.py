@@ -25,7 +25,11 @@ dst_directory_path = current_directory + "/output_files/clean_corpus/"
 query_dir = current_directory + "/test_collection/"
 
 def main():
-    JM_Query_Likelihood.jm_query_likelihood(8, " I am interested in articles written either by Prieve or Udo Pooch Prieve, B. Pooch, U.",False , False)
+
+
+
+
+    #JM_Query_Likelihood.jm_query_likelihood(8, " I am interested in articles written either by Prieve or Udo Pooch Prieve, B. Pooch, U.",False , False)
 
 
     # generate_corpuses()
@@ -52,7 +56,7 @@ def main():
     #     q_id+=1
     #     Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
 
-    #Evaluation.evaluate_docs()
+    Evaluation.evaluate_docs()
     
 
 
