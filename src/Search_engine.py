@@ -1,15 +1,15 @@
 
-from src import JM_Query_Likelihood, TF_IDF, BM25
-from src import Indexer
-from src import Stopper
-from src import Stemmer
-from src import Snippet_generation
-from src import Generate_corpus
+import JM_Query_Likelihood, TF_IDF, BM25
+import Indexer
+import Stopper
+import Stemmer
+import Snippet_generation
+import Generate_corpus
 import os
-from src import Read_data
+import Read_data
 from bs4 import BeautifulSoup
-from src import Pseudo_rel_feedback
-from src import Evaluation
+import Pseudo_rel_feedback
+import Evaluation
 
 # It gets a output folder in current source path.
 current_directory = os.getcwd()
