@@ -1,4 +1,6 @@
 import os
+import matplotlib.pyplot as plt
+
 
 baseline_dirs = ['bm_25', 'jm_query_likelihood', 'tf_idf', 'prf']
 subdirs = ['', 'stemmed', 'stopped']
@@ -6,6 +8,7 @@ subdirs = ['', 'stemmed', 'stopped']
 pr_dir = 'precision_and_recall'
 
 relevant_docs_dic = {}
+
 
 
 def get_relevant_docs():
@@ -51,12 +54,14 @@ def evaluate_docs():
         
         print(d)
         
+        avg_precision_points = []
+        avg_recall_points = []
+        
         precision_dict = {}
         recall_dict = {} 
         mrr = {}
         
         for query_id in relevant_docs_dic.keys():
-            
             
             rel_docs = relevant_docs_dic[query_id] 
             
@@ -65,7 +70,7 @@ def evaluate_docs():
                     file_total = files
                     
             # /2 because 1.txt and 1_snippet.txt
-            if(int(query_id) > (len(file_total)) / 2):
+            if(int(query_id) > (len(file_total)) / 2) and 'prf' not in d:
                 break
             
             with open(os.getcwd() + '/results/' +d + str(query_id) + '.txt', 'r+', encoding='UTF-8') as f:
@@ -127,10 +132,32 @@ def evaluate_docs():
             avg_precision = 0.0
             if len(doc_prec_dic) > 0:
                 avg_precision = num / len(doc_prec_dic)
+            
+            avg_precision_points.append(avg_precision)
                 
             prec_sum += avg_precision
+        
             
         map_val = prec_sum / len(precision_dict)
+
+
+        for query_id in recall_dict:
+            num = 0.0
+            doc_prec_dic = recall_dict[query_id]
+            for doc_id in doc_prec_dic:
+                num += doc_prec_dic[doc_id]
+                
+            avg_recall = 0.0
+            if len(doc_prec_dic) > 0:
+                avg_recall = num / len(doc_prec_dic)
+            
+            avg_recall_points.append(avg_recall)
+                
+            prec_sum += avg_precision
+
+
+        x = d.split('/')
+        plt.plot(avg_recall_points,avg_precision_points, label = x[0])
 
         prec_sum = 0.0
         # calculate mrr
@@ -144,7 +171,12 @@ def evaluate_docs():
         
         with open(os.getcwd() + '/evaluation/' + d + 'map_mrr.txt', 'w+') as f:
             f.write(MAP_MRR_str)
-        
+    
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    
+    plt.legend()
+    plt.show()
         
 def write_precision_and_recall_values(precision_dict, recall_dict, run_type):
     # recall_and_precison have same number of keys
