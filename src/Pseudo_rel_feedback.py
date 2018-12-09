@@ -6,11 +6,11 @@ import BM25, Indexer
 current_dir = os.getcwd()
 
 # docs that are to be considered relevant
-top_k = 1
+#top_k = 1
 relevant_docs_dic = {}
 
 # method to retrieve top documents using pseudo relevance feedback 
-def calculate_score(query_id,original_query_text):
+def calculate_score(query_id,original_query_text, top_k):
     
     # first run 
     # to fetch relevant results using bm25 function
