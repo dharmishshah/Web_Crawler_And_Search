@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Any information on packet radio networks   Of particular interest arealgorithms for packet routing  and for dealing with changes innetwork topography   I am not interested in the hardware used in thenetwork  
-
 28 Q0 CACM-2949 1 0.24905136 Lucene
 28 Q0 CACM-3032 2 0.209913 Lucene
 28 Q0 CACM-2849 3 0.14312525 Lucene

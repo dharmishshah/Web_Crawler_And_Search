@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Texture analysis by computer  Digitized texture analysis   Texturesynthesis  Perception of texture 
-
 44 Q0 CACM-2829 1 0.65269166 Lucene
 44 Q0 CACM-2523 2 0.5616205 Lucene
 44 Q0 CACM-2825 3 0.12014549 Lucene

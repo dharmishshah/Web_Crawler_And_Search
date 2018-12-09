@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Hardware and software relating to database management systems Database packages  back end computers  special associative hardwarewith microcomputers attached to disk heads or things like RAP  relational or network  CODASYL  or hierarchical models  systemslike SYSTEM R  IMS  ADABAS  TOTAL  etc 
-
 60 Q0 CACM-2967 1 0.13338906 Lucene
 60 Q0 CACM-2593 2 0.10890846 Lucene
 60 Q0 CACM-3087 3 0.09273841 Lucene

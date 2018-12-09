@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  computational complexity  intractability  class complete reductions algorithms and efficiency 
-
 21 Q0 CACM-3018 1 0.27015406 Lucene
 21 Q0 CACM-2337 2 0.22594504 Lucene
 21 Q0 CACM-2702 3 0.20112729 Lucene

@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  The role of information retrieval in knowledge based systems i e   expert systems  
-
 49 Q0 CACM-2390 1 0.3285231 Lucene
 49 Q0 CACM-3012 2 0.3113911 Lucene
 49 Q0 CACM-1514 3 0.29481757 Lucene

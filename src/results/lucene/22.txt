@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  I am interested in hidden line and hidden surface algorithms forcylinders  toroids  spheres  and cones   This is a rather specializedtopic in computer graphics  
-
 22 Q0 CACM-2678 1 0.39116383 Lucene
 22 Q0 CACM-2473 2 0.35132948 Lucene
 22 Q0 CACM-2913 3 0.28238 Lucene

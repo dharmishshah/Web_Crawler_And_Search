@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  find all discussions of optimal implementations of sort algorithms fordatabase management applications 
-
 14 Q0 CACM-3131 1 0.117710605 Lucene
 14 Q0 CACM-2289 2 0.10874403 Lucene
 14 Q0 CACM-3132 3 0.10335739 Lucene

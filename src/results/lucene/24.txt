@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Applied stochastic processes 
-
 24 Q0 CACM-0020 1 0.37781322 Lucene
 24 Q0 CACM-1410 2 0.36397845 Lucene
 24 Q0 CACM-1696 3 0.33715743 Lucene

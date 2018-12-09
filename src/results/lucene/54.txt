@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Semantics of programming languages  including abstract specificationsof data types  denotational semantics  and proofs of correctness Hoare  A Dijkstra  E  University of Massachusetts  Amherst  MA 01003
-
 54 Q0 CACM-2931 1 0.22838216 Lucene
 54 Q0 CACM-2940 2 0.17326541 Lucene
 54 Q0 CACM-3031 3 0.16545461 Lucene

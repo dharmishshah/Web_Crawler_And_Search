@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Information retrieval articles by Gerard Salton or others about clustering bibliographic coupling  use of citations or co citations  the vectorspace model  Boolean search methods using inverted files  feedback  etc Salton  G 
-
 61 Q0 CACM-2307 1 0.22839254 Lucene
 61 Q0 CACM-2711 2 0.17297795 Lucene
 61 Q0 CACM-1236 3 0.13369814 Lucene

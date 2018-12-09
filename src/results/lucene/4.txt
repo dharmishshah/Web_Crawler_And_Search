@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  I m interested in mechanisms for communicating between disjoint processes possibly  but not exclusively  in a distributed environment   I wouldrather see descriptions of complete mechanisms  with or without implementations as opposed to theoretical work on the abstract problem   Remote procedurecalls and message passing are examples of my interests 
-
 4 Q0 CACM-2931 1 0.081257306 Lucene
 4 Q0 CACM-2851 2 0.07230218 Lucene
 4 Q0 CACM-3128 3 0.06831559 Lucene

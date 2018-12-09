@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Addressing schemes for resources in networks  resource addressing innetwork operating systems 
-
 8 Q0 CACM-2625 1 0.34982654 Lucene
 8 Q0 CACM-2541 2 0.3131341 Lucene
 8 Q0 CACM-2951 3 0.24181458 Lucene

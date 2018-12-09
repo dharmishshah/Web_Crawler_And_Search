@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Articles on text formatting systems  including  what you see is what youget  systems   Examples  t nroff  scribe  bravo  
-
 30 Q0 CACM-3142 1 0.14928222 Lucene
 30 Q0 CACM-2341 2 0.102971196 Lucene
 30 Q0 CACM-2876 3 0.0924298 Lucene

@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Languages and compilers for parallel processors  especially highlyhorizontal microcoded machines  code compaction 
-
 18 Q0 CACM-2138 1 0.121738985 Lucene
 18 Q0 CACM-1988 2 0.11737372 Lucene
 18 Q0 CACM-3110 3 0.10688052 Lucene

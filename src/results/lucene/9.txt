@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Security considerations in local networks  network operating systems and distributed systems  
-
 9 Q0 CACM-2849 1 0.5963191 Lucene
 9 Q0 CACM-2949 2 0.43557814 Lucene
 9 Q0 CACM-2578 3 0.34534243 Lucene

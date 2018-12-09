@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Results relating parallel complexity theory  both for PRAM s anduniform circuits  
-
 62 Q0 CACM-1961 1 0.37086216 Lucene
 62 Q0 CACM-1368 2 0.17498642 Lucene
 62 Q0 CACM-2702 3 0.10693988 Lucene

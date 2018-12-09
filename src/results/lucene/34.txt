@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Currently interested in isolation of root of polynomial  there is an oldmore recent material Heindel  L  
-
 34 Q0 CACM-2660 1 0.1153194 Lucene
 34 Q0 CACM-1893 2 0.10264963 Lucene
 34 Q0 CACM-1667 3 0.08981843 Lucene

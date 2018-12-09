@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Algorithms for parallel computation  and especially comparisonsbetween parallel and sequential algorithms 
-
 63 Q0 CACM-2289 1 0.54524696 Lucene
 63 Q0 CACM-2266 2 0.46984777 Lucene
 63 Q0 CACM-3075 3 0.42706293 Lucene

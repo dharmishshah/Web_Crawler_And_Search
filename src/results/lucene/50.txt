@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Parallel processors in information retrieval
-
 50 Q0 CACM-1811 1 0.48677123 Lucene
 50 Q0 CACM-3075 2 0.39546818 Lucene
 50 Q0 CACM-3156 3 0.39546818 Lucene

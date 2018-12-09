@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Intermediate languages used in construction of multi targeted compilers  TCOLL 
-
 3 Q0 CACM-1988 1 0.11057275 Lucene
 3 Q0 CACM-2112 2 0.11057275 Lucene
 3 Q0 CACM-1154 3 0.095986575 Lucene

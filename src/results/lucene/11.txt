@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  SETL  Very High Level Languages 
-
 11 Q0 CACM-2699 1 1.2306654 Lucene
 11 Q0 CACM-2906 2 0.62269163 Lucene
 11 Q0 CACM-0724 3 0.4377947 Lucene

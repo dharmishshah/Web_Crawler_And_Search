@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  mathematical induction  group theory  integers modulo m probability  binomial coefficients  binomial theorem  homomorphism morphism  transitivity  relations  relation matrix      Syracuse University  313 Link Hall  Syracuse  N  13210
-
 53 Q0 CACM-1186 1 0.10272707 Lucene
 53 Q0 CACM-0139 2 0.06573126 Lucene
 53 Q0 CACM-0514 3 0.06573126 Lucene

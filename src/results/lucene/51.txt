@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Parallel processors and paging algorithms
-
 51 Q0 CACM-3075 1 0.681883 Lucene
 51 Q0 CACM-3156 2 0.64721256 Lucene
 51 Q0 CACM-2570 3 0.560632 Lucene

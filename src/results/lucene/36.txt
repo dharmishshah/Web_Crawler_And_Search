@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Fast algorithm for context free language recognition or parsing
-
 36 Q0 CACM-2030 1 0.8150971 Lucene
 36 Q0 CACM-2061 2 0.5848521 Lucene
 36 Q0 CACM-1350 3 0.5690648 Lucene

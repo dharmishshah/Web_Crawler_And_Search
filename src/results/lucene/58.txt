@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Algorithms or statistical packages for ANOVA  regression using leastsquares or generalized linear models   System design  capabilities statistical formula are of interest   Student s t test  Wilcoxon andsign tests  multivariate and univariate components can be included 
-
 58 Q0 CACM-1474 1 0.13480242 Lucene
 58 Q0 CACM-2634 2 0.124511786 Lucene
 58 Q0 CACM-1344 3 0.12021723 Lucene

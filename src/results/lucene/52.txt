@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Modelling and simulation in agricultural ecosystems 
-
 52 Q0 CACM-2721 1 0.4291739 Lucene
 52 Q0 CACM-2749 2 0.06547176 Lucene
 52 Q0 CACM-3070 3 0.056700215 Lucene

@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Computer performance evaluation techniques using pattern recognitionand clustering      LA    70803
-
 42 Q0 CACM-0462 1 0.13361 Lucene
 42 Q0 CACM-2318 2 0.12807283 Lucene
 42 Q0 CACM-2829 3 0.12219836 Lucene

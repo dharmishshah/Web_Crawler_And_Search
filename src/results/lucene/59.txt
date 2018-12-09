@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Dictionary construction and accessing methods for fast retrievalof words or lexical items or morphologically related information Hashing or indexing methods are usually applied to English spelling ornatural language problems 
-
 59 Q0 CACM-1456 1 0.16564034 Lucene
 59 Q0 CACM-0144 2 0.14608052 Lucene
 59 Q0 CACM-1855 3 0.119485855 Lucene

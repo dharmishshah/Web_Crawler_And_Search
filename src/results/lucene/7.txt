@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  I am interested in distributed algorithms   concurrent programs inwhich processes communicate and synchronize by using message passing Areas of particular interest include fault tolerance and techniquesfor understanding the correctness of these algorithms  
-
 7 Q0 CACM-3043 1 0.25899237 Lucene
 7 Q0 CACM-2949 2 0.11974286 Lucene
 7 Q0 CACM-3128 3 0.11968254 Lucene

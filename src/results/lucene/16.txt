@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  find all descriptions of file handling in operating systems based onmultiple processes and message passing  
-
 16 Q0 CACM-3141 1 0.20172548 Lucene
 16 Q0 CACM-1135 2 0.19266465 Lucene
 16 Q0 CACM-2378 3 0.15261912 Lucene

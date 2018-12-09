@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Analysis and perception of shape by humans and computers   Shapedescriptions  shape recognition by computer   Two dimensional shapes Measures of circularity   Shape matching 
-
 43 Q0 CACM-2771 1 0.20148602 Lucene
 43 Q0 CACM-3052 2 0.15126841 Lucene
 43 Q0 CACM-3098 3 0.14178854 Lucene

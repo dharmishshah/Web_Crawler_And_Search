@@ -169,11 +169,6 @@ public class LuceneApplication {
                 analyzer).parse(s);
         searcher.search(q, collector);
         ScoreDoc[] hits = collector.topDocs().scoreDocs;
-        writer.write("##################################################################");
-        writer.newLine();
-        writer.write("Output for query - " + s );
-        writer.newLine();
-        writer.newLine();
 
         // 4. display results
         System.out.println("Found " + hits.length + " hits.");

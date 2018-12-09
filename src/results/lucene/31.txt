@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  I d like to find articles describing the use of singular value decompositionin digital image processing   Applications include finding approximationsto the original image and restoring images that are subject to noise  Anarticle on the subject is H  Andrews and C  Patterson  Outer productexpansions and their uses in digital image processing   American MathematicalAndrews  H Patterson  C  
-
 31 Q0 CACM-1686 1 0.18800339 Lucene
 31 Q0 CACM-3047 2 0.14236094 Lucene
 31 Q0 CACM-3013 3 0.1420014 Lucene

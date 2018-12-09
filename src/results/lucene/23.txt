@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Distributed computing structures and algorithms 
-
 23 Q0 CACM-3137 1 0.43680686 Lucene
 23 Q0 CACM-2849 2 0.36874735 Lucene
 23 Q0 CACM-2081 3 0.36292917 Lucene

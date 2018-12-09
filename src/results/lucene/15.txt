@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Find all discussions of horizontal microcode optimization with specialemphasis on optimization of loops and global optimization  
-
 15 Q0 CACM-3125 1 0.29158095 Lucene
 15 Q0 CACM-2701 2 0.28918067 Lucene
 15 Q0 CACM-2877 3 0.25903994 Lucene

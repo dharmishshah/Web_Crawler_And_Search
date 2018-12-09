@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  The use of Bayesian decision models to optimize information retrievalsystem performance   This includes stopping rules to determine when auser should cease scanning the output of a retrieval search 
-
 47 Q0 CACM-2979 1 0.109162666 Lucene
 47 Q0 CACM-2970 2 0.103670135 Lucene
 47 Q0 CACM-1699 3 0.07610816 Lucene

@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Articles describing the relationship between data types and concurrency e g  what is the type of a process   when is a synchronization attempt between two processes  type correct    in a message passing system is thereany notion of the types of messages   i e  any way to check that the senderof the message and the receiver are both treating the bit stream as someparticular type 
-
 37 Q0 CACM-2265 1 0.18236667 Lucene
 37 Q0 CACM-3031 2 0.1310868 Lucene
 37 Q0 CACM-2956 3 0.13085938 Lucene

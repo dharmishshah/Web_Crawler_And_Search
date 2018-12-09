@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  The use of computer science principles  e g  data structures  numerical methods  in generating optimization  e g  linear programming algorithms   This includes issues of the Khachian  Russian  ellipsoidal algorithm and complexity of such algorithms 
-
 48 Q0 CACM-0409 1 0.20209973 Lucene
 48 Q0 CACM-2646 2 0.17517267 Lucene
 48 Q0 CACM-2314 3 0.15688448 Lucene

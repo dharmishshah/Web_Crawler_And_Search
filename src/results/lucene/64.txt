@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  List all articles on EL1 and ECL  EL1 may be given as EL 1  I don tremember how they did it 
-
 64 Q0 CACM-2651 1 0.09841562 Lucene
 64 Q0 CACM-0595 2 0.0849053 Lucene
 64 Q0 CACM-0497 3 0.06602739 Lucene

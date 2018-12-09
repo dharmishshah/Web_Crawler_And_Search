@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Interested in articles on robotics  motion planning particularly thegeometric and combinatorial aspects   We are not interested in thedynamics of arm motion  
-
 6 Q0 CACM-0695 1 0.097420886 Lucene
 6 Q0 CACM-2826 2 0.06641921 Lucene
 6 Q0 CACM-0531 3 0.06554475 Lucene

@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  What is the type of a module   I don t want the entire literature onAbstract Data Types here  but I m not sure how to phrase this to avoid it I m interested in questions about how one can check that a module  matches contexts in which it is used  
-
 38 Q0 CACM-3142 1 0.14491709 Lucene
 38 Q0 CACM-2082 2 0.11758341 Lucene
 38 Q0 CACM-2233 3 0.11037174 Lucene

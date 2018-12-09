@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Performance evaluation and modelling of computer systems 
-
 25 Q0 CACM-2318 1 0.6451745 Lucene
 25 Q0 CACM-2268 2 0.41750446 Lucene
 25 Q0 CACM-2984 3 0.37280035 Lucene

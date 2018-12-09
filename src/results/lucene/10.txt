@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Parallel languages  languages for parallel computation 
-
 10 Q0 CACM-2785 1 1.232669 Lucene
 10 Q0 CACM-2700 2 0.6350775 Lucene
 10 Q0 CACM-1795 3 0.61630225 Lucene

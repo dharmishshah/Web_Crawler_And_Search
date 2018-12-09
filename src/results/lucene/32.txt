@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  I d like to find articles describing graph algorithms that are based onthe eigenvalue decomposition  or singular value decomposition  of theajacency matrix for the graph   I m especially interested in any heuristicalgorithms for graph coloring and graph isomorphism using this method  
-
 32 Q0 CACM-2177 1 0.30211982 Lucene
 32 Q0 CACM-3139 2 0.24998699 Lucene
 32 Q0 CACM-3156 3 0.17000127 Lucene

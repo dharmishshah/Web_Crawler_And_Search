@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Theory of distributed systems and databases   Subtopics of specialinterest include reliability and fault tolerance in distributed systems atomicity  distributed transactions  synchronization algorithms  resource allocation  lower bounds and models for asynchronous parallelsystems   Also theory of communicating processes and protocols         P  Box 2158 Yale Station  New Haven  Conn   06520
-
 41 Q0 CACM-3128 1 0.13099164 Lucene
 41 Q0 CACM-2578 2 0.09374125 Lucene
 41 Q0 CACM-3043 3 0.08710009 Lucene

@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  I am interested in articles written either by Prieve or Udo PoochPrieve  B Pooch  U  
-
 2 Q0 CACM-0497 1 0.074137315 Lucene
 2 Q0 CACM-3078 2 0.0716305 Lucene
 2 Q0 CACM-2434 3 0.0683016 Lucene

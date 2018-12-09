@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Concurrency control mechanisms in operating systems  
-
 26 Q0 CACM-3105 1 0.36697638 Lucene
 26 Q0 CACM-2626 2 0.30440038 Lucene
 26 Q0 CACM-1677 3 0.28622216 Lucene

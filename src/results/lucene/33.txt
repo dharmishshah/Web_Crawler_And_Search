@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Articles about the sensitivity of the eigenvalue decomposition of realmatrices  in particular  zero one matrices   I m especially interested inthe separation of eigenspaces corresponding to distinct eigenvalues Articles on the subject C  Davis and W  Kahn   The rotation of eigenvectors by a permutation  SIAM J  Numerical Analysis  vol  7  no  1  1970   G  Stewart   Errorbounds for approximate invariant subspaces of closed linear operators  SIAM J  Numerical Analysis   Vol  8  no  4  1971  Davis  C Kahn  W Stewart  G  
-
 33 Q0 CACM-1954 1 0.10104975 Lucene
 33 Q0 CACM-2284 2 0.10086663 Lucene
 33 Q0 CACM-2047 3 0.08967458 Lucene

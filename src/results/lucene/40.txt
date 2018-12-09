@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  List all articles dealing with data types in the following languages that are referenced frequently in papers on the above languages  e g  catchany languages with interesting type structures that I might have missed  
-
 40 Q0 CACM-1588 1 0.22441098 Lucene
 40 Q0 CACM-1098 2 0.1850898 Lucene
 40 Q0 CACM-2051 3 0.18477495 Lucene

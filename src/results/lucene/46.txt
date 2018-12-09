@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  The application of fuzzy subset theory to clustering and informationretrieval problems   This includes performance evaluation and automaticindexing considerations 
-
 46 Q0 CACM-1032 1 0.12798862 Lucene
 46 Q0 CACM-2984 2 0.10899358 Lucene
 46 Q0 CACM-2568 3 0.10108197 Lucene

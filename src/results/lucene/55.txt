@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Anything dealing with star height of regular languages or regularexpressions or regular events 
-
 55 Q0 CACM-2650 1 0.28896406 Lucene
 55 Q0 CACM-2921 2 0.18315619 Lucene
 55 Q0 CACM-2051 3 0.16188875 Lucene

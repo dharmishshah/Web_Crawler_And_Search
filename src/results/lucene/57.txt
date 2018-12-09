@@ -1,6 +1,3 @@
-##################################################################
-Output for query -  Abstracts of articles     J  Backus   Can programming be liberated from the Von Neumann style                A functional style and its algebra of programs   CACM 21    Re Millo  R  Lipton  A  Perlis  letter to ACM Forum  CACM 22         1979   629 630Backus  J De Millo  R Lipton  R Perlis  A 
-
 57 Q0 CACM-3077 1 0.5889606 Lucene
 57 Q0 CACM-3140 2 0.3545664 Lucene
 57 Q0 CACM-1705 3 0.14618877 Lucene
