@@ -96,7 +96,7 @@ def jm_query_likelihood(queryId, query, isStemming,isStopping):
                         fqi_D = doc[1]
 
             #lm dirichlet smoothing
-            partial_score = ( ((1 - lambdaValue) * (fqi_D / term_count)) + (lambdaValue * (q_dict.get(q) / word_count)))
+            partial_score = ( (1 - lambdaValue) * (fqi_D / term_count) + lambdaValue * (q_dict.get(q) / word_count))
 
             # adding score in existing score for document
             if partial_score != 0:
