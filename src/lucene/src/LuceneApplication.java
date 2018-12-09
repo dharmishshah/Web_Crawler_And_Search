@@ -161,7 +161,7 @@ public class LuceneApplication {
 
         dir = new File("../").getCanonicalPath();
 
-        File file = new File(dir + "/results/lucene/" + queryId + "_lucene.txt");
+        File file = new File(dir + "/results/lucene/" + queryId + ".txt");
         FileWriter fw = new FileWriter(file);
         BufferedWriter writer = new BufferedWriter(fw);
 
