@@ -34,20 +34,22 @@ def jm_query_likelihood(queryId, query, isStemming,isStopping):
     # splitting search query into terms separated by space
     query_terms = query.split(" ")
 
-    # writing output in a file
-    f = Read_data.getFileName(dst_directory, str(queryId))
+
 
     if isStemming:
         inverted_index_data = current_directory + "/indexes/inverted_index_stemmed.txt"
         term_count_data = current_directory + "/indexes/term_count_stemmed.txt"
         dst_directory = current_directory + "/results/jm_query_likelihood_stemmed"
         f = Read_data.getFileName(dst_directory, str(queryId))
-
-    if isStopping:
+    elif isStopping:
         inverted_index_data = current_directory + "/indexes/inverted_index_stopped.txt"
         term_count_data = current_directory + "/indexes/term_count_stopped.txt"
         dst_directory = current_directory + "/results/jm_query_likelihood_stopped"
         f = Read_data.getFileName(dst_directory, str(queryId))
+    else:
+        # writing output in a file
+        f = Read_data.getFileName(dst_directory, str(queryId))
+
 
     term_count_dict = Read_data.read_term_count(term_count_data)
     inverted_index_dict = Read_data.read_inverted_index(inverted_index_data)
@@ -100,6 +102,7 @@ def jm_query_likelihood(queryId, query, isStemming,isStopping):
             if partial_score != 0:
                 score = score + math.log10(partial_score)
         score_dict[every_doc] = score
+        print("jm calculated for - " + every_doc + ' for query ' + str(queryId))
     # sorting document based on score in descending order
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
 

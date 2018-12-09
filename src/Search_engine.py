@@ -1,15 +1,15 @@
 
-import JM_Query_Likelihood, TF_IDF, BM25
-import Indexer
-import Stopper
-import Stemmer
-import Snippet_generation
-import Generate_corpus
+from src import JM_Query_Likelihood, TF_IDF, BM25
+from src import Indexer
+from src import Stopper
+from src import Stemmer
+from src import Snippet_generation
+from src import Generate_corpus
 import os
-import Read_data
+from src import Read_data
 from bs4 import BeautifulSoup
-import Pseudo_rel_feedback
-import Evaluation
+from src import Pseudo_rel_feedback
+from src import Evaluation
 
 # It gets a output folder in current source path.
 current_directory = os.getcwd()
@@ -31,12 +31,12 @@ def main():
 
     #generate_indexes()
 
-#     query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
-#     for query in query_dict:
-#         run_bm_25(int(query),query_dict.get(query),False)
-#         run_jm(int(query), query_dict.get(query), False)
-#         run_tf_idf(int(query), query_dict.get(query), False)
-#         print("done for query - " + query)
+    query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+    for query in query_dict:
+        #run_bm_25(int(query),query_dict.get(query),False)
+        run_jm(int(query), query_dict.get(query), False)
+        run_tf_idf(int(query), query_dict.get(query), False)
+        print("done for query - " + query)
 
     # stemmed_query_dict = Read_data.get_query_stemmed(query_dir + "cacm_stem.query.txt")
     # for query in stemmed_query_dict:
@@ -57,7 +57,7 @@ def main():
 #         Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
     
     
-    Evaluation.evaluate_docs()
+    #Evaluation.evaluate_docs()
     
 
 
