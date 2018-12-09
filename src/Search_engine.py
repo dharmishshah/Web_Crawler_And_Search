@@ -27,36 +27,31 @@ query_dir = current_directory + "/test_collection/"
 def main():
 
 
-    #generate_corpuses()
-
-    #generate_indexes()
-
-    query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
-    for query in query_dict:
-        #run_bm_25(int(query),query_dict.get(query),False)
-        run_jm(int(query), query_dict.get(query), False)
-        run_tf_idf(int(query), query_dict.get(query), False)
-        print("done for query - " + query)
-
+    # generate_corpuses()
+    #
+    # generate_indexes()
+    #
+    # query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+    # for query in query_dict:
+    #     run_bm_25(int(query),query_dict.get(query),False)
+    #     run_jm(int(query), query_dict.get(query), False)
+    #     run_tf_idf(int(query), query_dict.get(query), False)
+    #     print("done for query - " + query)
+    #
     # stemmed_query_dict = Read_data.get_query_stemmed(query_dir + "cacm_stem.query.txt")
     # for query in stemmed_query_dict:
     #     run_bm_25(int(query),stemmed_query_dict.get(query),True)
     #     run_jm(int(query), stemmed_query_dict.get(query), True)
     #     run_tf_idf(int(query), stemmed_query_dict.get(query), True)
     #     print("done for stemmed query - " + str(query))
+    #
+    # query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
+    # q_id=0
+    # for query in query_dict:
+    #     q_id+=1
+    #     Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
 
-
-    # run_bm_25()
-    # run_jm()
-    # run_tf_idf()
-
-#     query_dict = Read_data.get_query(query_dir + "cacm.query.txt")
-#     q_id=0
-#     for query in query_dict:
-#         q_id+=1
-#         Pseudo_rel_feedback.calculate_score(q_id, query_dict.get(query))
-
-    #Evaluation.evaluate_docs()
+    Evaluation.evaluate_docs()
     
 
 

@@ -13,30 +13,26 @@ relevant_docs_dic = {}
 def calculate_score(query_id,original_query_text):
     
     # first run 
-    # to fetch relevant results using bm25 function 
-#     score_dict = BM25.bm25(query_id, original_query_text, False, False)
-#     
-#     
-#     # the top_k files to be searched for relevant words
-#     file_names = []
-#     
-#     k = 0
-#     for doc in score_dict.keys():
-#         
-#         file_names.append(doc)
-#         
-#         k += 1
-#         if(k == top_k):
-#             break
-#     
-    #print(file_names)
+    # to fetch relevant results using bm25 function
+    score_dict = BM25.bm25(query_id, original_query_text, False, False)
+
+     # the top_k files to be searched for relevant words
+    file_names = []
+
+    k = 0
+    for doc in score_dict.keys():
+
+        file_names.append(doc)
+
+        k += 1
+        if(k == top_k):
+            break
+
+    print(file_names)
     
-    global relevant_docs_dic
-    
-    
-    get_relevant_docs()
-    
-    file_names = relevant_docs_dic[query_id]
+    # global relevant_docs_dic
+    # get_relevant_docs()
+    # file_names = relevant_docs_dic[query_id]
     
     # new query to be appended to original query for fetching highly relevant results
     refined_query = Indexer.create_index('./output_files/clean_corpus_with_no_stopwords', file_names, top_k, "clean")
