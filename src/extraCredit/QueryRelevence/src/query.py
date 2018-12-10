@@ -246,7 +246,7 @@ def best_match(query):
 
 
 def proximity_match_wrapper():
-    for query in queryList[:1]:
+    for query in queryList:
         proximity_match(query)
 
 
