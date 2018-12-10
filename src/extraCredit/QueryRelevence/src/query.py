@@ -246,7 +246,7 @@ def best_match(query):
 
 
 def proximity_match_wrapper():
-    for query in queryList:
+    for query in queryList[:1]:
         proximity_match(query)
 
 
@@ -362,7 +362,12 @@ def wordsInCollection(collection):
 
 def list_of_documents_in_collection_in_with_query_term_present(term, collection):
     list_of_docs_in_collection_quey_word_present = []
+
+    if term not in inverted_index.keys():
+        return []
+
     listOflist = inverted_index[term]
+
 
     for doc in collection:
         for list in listOflist:
@@ -411,7 +416,7 @@ def bm25ranking(list_of_query_terms,collection):
             query_frequency_score = (k2 + 1) * query_counts / (k2 + query_counts)
             score = score + partial_score * term_frequency_score * query_frequency_score
             index += 1
-        #print("the score of ",every_doc," is: ",score)
+        print("the score of ",every_doc," is: ",score)
         score_dict[every_doc] = score
 
     score_dict = OrderedDict(sorted(score_dict.items(), key=lambda key_value: key_value[1], reverse=True))
@@ -423,7 +428,7 @@ def bm25ranking(list_of_query_terms,collection):
 
 
 def proximity_match(query):
-    print("************** Executing Proximity Best Match ****************")
+    print("************** Executing Proximity Best Match ****************", proximity_window)
     print("the query term being processed is: " + query)
     list_of_query_terms = query.split(" ")
     pool = Pool()
@@ -480,6 +485,7 @@ def do_you_want_to_enter_your_own_query():
 
 
 def documentRetreval():
+    global proximity_window
     option = input("\n\nEnter one of the following options:\n1. Exact Match\n2. Best Match\n3. Ordered best	match within proximity N\n4.Exit\n\n")
     if option.lower() == "1":
         query = do_you_want_to_enter_your_own_query()
@@ -502,6 +508,8 @@ def documentRetreval():
             query = query.lower()
             best_match(query)
     elif option.lower() == "3":
+        proximity = input("Enter the proximity window: ")
+        proximity_window = int(proximity)
         query = do_you_want_to_enter_your_own_query()
         if query == None:
             removal_of_stop_words_from_queryList()
